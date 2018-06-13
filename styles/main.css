@@ -1,3 +1,23 @@
 body {
   background-color: blue;
 }
+
+#message-main-container {
+  border: 5px solid red;
+}
+
+#tasks-main-container {
+  border: 5px solid red;
+}
+
+#events-main-container {
+  border: 5px solid red;
+}
+
+#articles-main-container {
+  border: 5px solid red;
+}
+
+#friends-main-container {
+  border: 5px solid red;
+}
