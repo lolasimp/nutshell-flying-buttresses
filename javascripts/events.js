@@ -23,7 +23,6 @@ const authEvents = () =>
     firebase.auth().createUserWithEmailAndPassword(email, pass).catch((error) => {
       $('#registerError').text(error.message);
       $('#registerErrorDiv').removeClass('hide');
-      $('#registration-form').addClass('hide');
       console.error(error.message);
     });
   });
