@@ -4,12 +4,12 @@ let uid = '';
 const setConfig = (fbConfig) =>
 {
   fireBaseConfig = fbConfig;
-  console.log(fireBaseConfig);
+  console.error(fireBaseConfig);
 };
 
 const setUID = (newUID) => {
   uid = newUID;
-  console.log(uid);
+  console.error(uid);
 };
 
 module.exports =
