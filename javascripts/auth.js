@@ -1,4 +1,5 @@
 const {setUID,} = require('./firebaseAPI');
+const firebaseFriends = require('./friends/firebaseFriends.js');
 
 const checkLoginStatus = () =>
 {
@@ -13,6 +14,7 @@ const checkLoginStatus = () =>
       $('#friends-main-container').removeClass('hide');
       $('#authScreen').addClass('hide');
       $('#auth').addClass('hide');
+      firebaseFriends.getFriendRequests();
     } else {
       $('#mess, #tsk, #evnts, #artcls, #frnds, #logout').addClass('hide');
       $('#message-main-container').addClass('hide');
