@@ -6,7 +6,8 @@
 		"jquery": true
   },
   "globals": {
-    "firebase": true
+		"firebase": true,
+		"moment": true
   },
 	"rules": {
 		"arrow-spacing": ["error", {

@@ -3,21 +3,32 @@ body {
 }
 
 #message-main-container {
-  border: 5px solid red;
+  border: 5px solid maroon;
 }
 
 #tasks-main-container {
-  border: 5px solid red;
+  border: 5px solid maroon;
 }
 
 #events-main-container {
-  border: 5px solid red;
+  border: 5px solid maroon;
 }
 
 #articles-main-container {
-  border: 5px solid red;
+  border: 5px solid maroon;
 }
 
 #friends-main-container {
-  border: 5px solid red;
+  border: 5px solid maroon;
 }
+
+/* MESSAGE STYLING */
+#message-main-container {
+  background-color: oldlace;
+}
+
+#place-messages-here {
+  overflow-y: scroll;
+  overflow-y: none;
+}
+/* END MESSAGE STYLING */
