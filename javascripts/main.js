@@ -1,3 +1,3 @@
-const {initializer,} = require('./tasks/events');
+const events = require('./tasks/events');
 
-initializer();
+events();
