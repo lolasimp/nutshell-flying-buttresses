@@ -1,0 +1,26 @@
+{
+  "fObject1": {
+  "userUid": "kS7WlI1bPtbPvkbkD9EwEMNCKKG2",
+  "friendUid": "9ctH49g3ZwVCCzttc91rWeGpzLm1",
+  "isAccepted": false,
+  "isPending": true
+},
+"fObject2": {
+  "userUid": "kS7WlI1bPtbPvkbkD9EwEMNCKKG2",
+  "friendUid": "YcdvBQnU0fWKzUnOax0AfjyDmks1",
+  "isAccepted": false,
+  "isPending": true
+},
+"fObject3": {
+  "userUid": "friend1",
+  "friendUid": "user1",
+  "isAccepted": true,
+  "isPending": false
+},
+"fObject4": {
+  "userUid": "friend2",
+  "friendUid": "user1",
+  "isAccepted": false,
+  "isPending": true
+}
+}
