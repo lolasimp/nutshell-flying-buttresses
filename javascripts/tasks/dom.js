@@ -1,5 +1,7 @@
+// let newTask = '';
+
 // create panel for new task
-const newTask = (taskToAdd) => {
+const newTaskToAdd = (taskToAdd) => {
   const domString =
     `<div class="panel panel-default">
       <div class="panel-body">
@@ -10,11 +12,11 @@ const newTask = (taskToAdd) => {
   printToDom('where-tasks-live', domString);
 };
 
-// universal functions
+// universal print function
 const printToDom = (whereToPrint, task) => {
   $(`#${whereToPrint}`).html(task);
 };
 
 module.exports = {
-  newTask,
+  newTaskToAdd,
 };

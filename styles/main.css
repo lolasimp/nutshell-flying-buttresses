@@ -1,5 +1,5 @@
 body {
-  background-color: blue;
+  background-color: palevioletred;
 }
 
 #message-main-container {
@@ -7,7 +7,9 @@ body {
 }
 
 #tasks-main-container {
-  border: 5px solid red;
+  border: 5px solid saddlebrown;
+  margin: 25px;
+  padding: 25px;
 }
 
 #events-main-container {

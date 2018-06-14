@@ -4,7 +4,13 @@ const addTaskBtn = () => {
   $('#add-task-btn').on('click', (e) => {
     e.preventDefault();
     const ui = grabUserInput();
-    dom.newTask(ui);
+    dom.newTaskToAdd(ui);
+  });
+
+  $('#add-task-btn').keypress((e) => {
+    e.preventDefault();
+    const ui = grabUserInput();
+    dom.newTaskToAdd(ui);
   });
 };
 
