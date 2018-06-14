@@ -1,3 +1,5 @@
+const message = require ('./messages/main');
+
 const authEvents = () =>
 {
   $('#signin-btn').click((e) =>
@@ -56,6 +58,9 @@ const authEvents = () =>
 
 const initializer = () =>
 {
+  // FUNCTION CALL FOR TESTING PURPOSES
+  message.callMessageBuilder();
+
   authEvents();
 };
 
