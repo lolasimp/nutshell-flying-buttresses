@@ -1,5 +1,3 @@
-const message = require ('./messages/message_main');
-
 const authEvents = () =>
 {
   $('#signin-btn').click((e) =>
@@ -57,8 +55,6 @@ const authEvents = () =>
 
 const initializer = () =>
 {
-  // GET DATA FROM FIREBASE AND SET MESSAGE BOARD LISTENERS
-  message.initMessageBoard();
   authEvents();
 };
 

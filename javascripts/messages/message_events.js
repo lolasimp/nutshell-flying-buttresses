@@ -1,4 +1,6 @@
 const mFirebase = require('./message_firebase');
+const mGet = require('./messages_get');
+const mDom = require('./message_dom');
 
 // POST MESSAGE TO FIREBASE
 const addMessageEvent = () => {
@@ -11,12 +13,27 @@ const addMessageEvent = () => {
       'isEdited': false,
     };
     mFirebase.saveMessage(messageToPost)
+      .then(() => {
+        $('#user-message-input').val('');
+        getAllMessagesEvent();
+      })
       .catch((error) => {
         console.error('error in saving message', error);
       });
   });
 };
 
+const getAllMessagesEvent = () => {
+  mGet.getAllMessages()
+    .then((messagesArray) => {
+      mDom.messageBuilder(messagesArray);
+    })
+    .catch((error) => {
+      console.error('error in get all messages', error);
+    });
+};
+
 module.exports = {
   addMessageEvent,
+  getAllMessagesEvent,
 };
