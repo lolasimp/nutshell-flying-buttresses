@@ -1,4 +1,4 @@
-const message = require ('./messages/main');
+const message = require ('./messages/message_main');
 
 const authEvents = () =>
 {
@@ -24,7 +24,6 @@ const authEvents = () =>
     firebase.auth().createUserWithEmailAndPassword(email, pass).catch((error) => {
       $('#registerError').text(error.message);
       $('#registerErrorDiv').removeClass('hide');
-      $('#registration-form').addClass('hide');
       console.error(error.message);
     });
   });
@@ -57,9 +56,8 @@ const authEvents = () =>
 
 const initializer = () =>
 {
-  // FUNCTION CALL FOR TESTING PURPOSES
-  message.callMessageBuilder();
-
+  // GET DATA FROM FIREBASE AND SET MESSAGE BOARD LISTENERS
+  message.initMessageBoard();
   authEvents();
 };
 
