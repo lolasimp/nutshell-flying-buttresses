@@ -1,4 +1,4 @@
-const message = require ('./messages/main');
+const message = require ('./messages/message_main');
 
 const authEvents = () =>
 {
@@ -57,9 +57,8 @@ const authEvents = () =>
 
 const initializer = () =>
 {
-  // FUNCTION CALL FOR TESTING PURPOSES
-  message.callMessageBuilder();
-
+  // GET DATA FROM FIREBASE AND SET MESSAGE BOARD LISTENERS
+  message.initMessageBoard();
   authEvents();
 };
 

@@ -1,37 +1,8 @@
-// Build up the message string from the data collected from firebase
-
 const dom = require('./../dom');
-
-// TEMPORARY USERINFO TO TEST FUNCTION
-const myMessageArray = [
-  {
-    'username': 'John Doe',
-    'message': 'Whats up?',
-    'timestamp': 1528763298535,
-    'isEdited': true,
-  },
-  {
-    'username': 'Mary Jane',
-    'message': 'I am bored.',
-    'timestamp': 1528763298535,
-    'isEdited': false,
-  },
-  {
-    'username': 'Ben Dover',
-    'message': 'Tell me about it.',
-    'timestamp': 1528763298535,
-    'isEdited': true,
-  },
-];
-
-// TEMPORARY FUNCTION TO TEST BRANCH
-const callMessageBuilder = () => {
-  messageBuilder(myMessageArray);
-};
 
 const messageBuilder = (messageArray) => {
   let messageString = '';
-  messageArray.forEach((message, index) => {
+  messageArray.forEach((message) => {
     messageString += `<div class='message' id='${messageArray.indexOf(message)}'>`;
     messageString +=    `<div class='row'>`;
     messageString +=       `<div class='col-sm-10'>`;
@@ -64,5 +35,4 @@ const messageBuilder = (messageArray) => {
 
 module.exports = {
   messageBuilder,
-  callMessageBuilder,
 };

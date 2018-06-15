@@ -7,13 +7,23 @@ const setConfig = (fbConfig) =>
   console.error(fireBaseConfig);
 };
 
+const getConfig = () => {
+  return fireBaseConfig;
+};
+
 const setUID = (newUID) => {
   uid = newUID;
   console.error(uid);
 };
 
+const getUID = () => {
+  return uid;
+};
+
 module.exports =
 {
   setConfig,
+  getConfig,
   setUID,
+  getUID,
 };
