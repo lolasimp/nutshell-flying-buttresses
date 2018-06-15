@@ -26,6 +26,7 @@ const addMessageEvent = () => {
 const getAllMessagesEvent = () => {
   mGet.getAllMessages()
     .then((messagesArray) => {
+      console.error(messagesArray);
       mDom.messageBuilder(messagesArray);
       $('#place-messages-here').scrollTop($('#place-messages-here')[0].scrollHeight);
     })
