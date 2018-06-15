@@ -67,9 +67,51 @@
     <p>poop</p>
   </div>
 
-  <div id="events-main-container" class="hide row">
-    <p>poop</p>
+  <div id="events-main-container" class="row">
+      <div>
+      <div>
+        <h1>Events</h1>
+        <div>
+      <button type="button" class="eventModalBtn btn-primary btn-lg" data-toggle="modal" data-target="#myEvent">
+          Click To Add Event
+        </button>
+    <div class="modal fade" id="myEvent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close-event" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Enter Event Info Here</h4>
+          </div>
+          <div class="event-body">
+            <div class="input-group input-group-md">
+              <span class="input-group-addon" id="event-name">Event Name</span>
+              <input type="text" class="form-control" placeholder="Name of event" aria-describedby="sizing-addon1">
+            </div>
+
+            <div class="input-group input-group-md">
+              <span class="input-group-addon" id="event-date">Event Date</span>
+              <input type="text" class="form-control" placeholder="Date of event" aria-describedby="sizing-addon">
+            </div>
+
+            <div class="input-group input-group-md">
+              <span class="input-group-addon" id="event-location">Location of Event</span>
+              <input type="text" class="form-control" placeholder="Where are you going?" aria-describedby="sizing-addon3">
+            </div>
+          </div>
+          <div class="event-modal-footer">
+            <button type="button" class="close-event-btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="save-event-btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+   </div>
+    <div id="upcomingEvents">
+      <h2>Are the events here?</h2>
+    </div>
   </div>
+</div>
 
   <div id="articles-main-container" class="hide row">
     <p>poop</p>
