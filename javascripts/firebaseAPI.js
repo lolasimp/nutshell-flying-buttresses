@@ -11,6 +11,10 @@ const getConfig = () => {
   return fireBaseConfig;
 };
 
+const getFirebaseConfig = () => {
+  return fireBaseConfig;
+};
+
 const setUID = (newUID) => {
   uid = newUID;
   console.error(uid);
@@ -25,5 +29,6 @@ module.exports =
   setConfig,
   getConfig,
   setUID,
+  getFirebaseConfig,
   getUID,
 };

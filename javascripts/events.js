@@ -8,8 +8,7 @@ const authEvents = () =>
     const email = $('#inputEmail').val();
     const pass = $('#inputPassword').val();
     firebase.auth().signInWithEmailAndPassword(email, pass)
-      .then((user) =>
-      {
+      .then((user) => {
       })
       .catch((err) =>
       {
