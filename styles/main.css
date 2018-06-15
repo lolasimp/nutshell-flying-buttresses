@@ -29,7 +29,11 @@ body {
 
 #place-messages-here {
   overflow-y: scroll;
-  overflow-y: none;
+  height: 400px;
+}
+
+.row {
+  margin: 5px;
 }
 /* END MESSAGE STYLING */
 

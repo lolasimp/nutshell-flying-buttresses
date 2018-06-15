@@ -1,4 +1,3 @@
-const message = require ('./messages/message_main');
 const events = require('./events/main');
 
 const authEvents = () =>
@@ -78,8 +77,6 @@ const eventsArray = [
 
 const initializer = () =>
 {
-  // GET DATA FROM FIREBASE AND SET MESSAGE BOARD LISTENERS
-  message.initMessageBoard();
   authEvents();
   events.eventsAdded(eventsArray);
 };
