@@ -16,6 +16,8 @@
     "gruntify-eslint": "^4.0.0",
     "matchdep": "^2.0.0"
   },
-  "dependencies": {},
-  "description": ""
+
+  "dependencies": {
+    "moment": "^2.22.2"
+  }
 }

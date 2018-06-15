@@ -19,17 +19,19 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Brand</a>
+        <a class="navbar-brand" href="#">In a Nutshell</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Messages</a></li>
-          <li class="hide"><a href="#tasks-main-container">Tasks</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">Articles</a></li>
-          <li><a href="#">Friends</a></li>
+          <li><a href="#" id="auth">Authentication</a></li>
+          <li><a href="#" id="mess" class="hide">Messages</a></li>
+          <li><a href="#tasks-main-container" id="tsk" class="hide">Tasks</a></li>
+          <li><a href="#" id="evnts" class="hide">Events</a></li>
+          <li><a href="#" id="artcls" class="hide">Articles</a></li>
+          <li><a href="#" id="frnds" class="hide">Friends</a></li>
+          <li><a href="#" id='logout' class='hide'>Log Out</a></li>
         </ul>
           </li>
         </ul>
@@ -62,19 +64,31 @@
             <a href="#" id="register-link">Need to Register?</a>
           </div>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-default">Sign in</button>
-        </div>
-      </div>
-    </form>
+  <div id="friend-requests" class="row col-sm-12">
 
-  <div id="message-main-container" class="hide row">
-    <p>poop</p>
   </div>
 
-  <div id="tasks-main-container" class=" row">
+  <!-- MESSAGE BOARD -->
+  <div id="message-main-container" class="hide row col-md-4 col-xs-12 col-sm-12">
+    <div>
+      <div>
+        <h1>Message Board</h1>
+        <div>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Type Message Here..." id="user-message-input">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" title="Print Message To Board" id="submit-message">Submit</button>
+            </span>
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+      </div>
+      <div id="place-messages-here">
+        <!-- MESSAGES WILL BE WRITTEN HERE -->
+      </div>
+    </div>
+  </div>
+
+  <div id="tasks-main-container" class=" .col-md-4 row">
     <h3>My Tasks</h3>
     <div id="where-tasks-live" class="tasks"></div>
     <form class="form-inline">
@@ -86,9 +100,51 @@
     </form>
   </div>
 
-  <div id="events-main-container" class="hide row">
-    <p>poop</p>
+  <div id="events-main-container" class="row">
+      <div>
+      <div>
+        <h1>Events</h1>
+        <div>
+      <button type="button" class="eventModalBtn btn-primary btn-lg" data-toggle="modal" data-target="#myEvent">
+          Click To Add Event
+        </button>
+    <div class="modal fade" id="myEvent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close-event" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Enter Event Info Here</h4>
+          </div>
+          <div class="event-body">
+            <div class="input-group input-group-md">
+              <span class="input-group-addon" id="event-name">Event Name</span>
+              <input type="text" class="form-control" placeholder="Name of event" aria-describedby="sizing-addon1">
+            </div>
+
+            <div class="input-group input-group-md">
+              <span class="input-group-addon" id="event-date">Event Date</span>
+              <input type="text" class="form-control" placeholder="Date of event" aria-describedby="sizing-addon">
+            </div>
+
+            <div class="input-group input-group-md">
+              <span class="input-group-addon" id="event-location">Location of Event</span>
+              <input type="text" class="form-control" placeholder="Where are you going?" aria-describedby="sizing-addon3">
+            </div>
+          </div>
+          <div class="event-modal-footer">
+            <button type="button" class="close-event-btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="save-event-btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+   </div>
+    <div id="upcomingEvents">
+      <h2>Are the events here?</h2>
+    </div>
   </div>
+</div>
 
   <div id="articles-main-container" class="hide row">
     <p>poop</p>
@@ -98,21 +154,86 @@
     <p>poop</p>
   </div>
 
-  <div id="register-form">
-
-
+  <div id="authScreen">
+    <div id="registration-form" class="hide">
+        <h1 class="text-center">Registration</h1>
+        <form class="form-horizontal col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+          <div class="alert alert-danger hide" role="alert" id="registerErrorDiv">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            <span id='registerError'></span>
+          </div>
+          <div class="form-group">
+            <label for="registerEmail" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="registerEmail" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="registerEmail" class="col-sm-2 control-label">Username</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="registerUsername" placeholder="Username">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="registerPassword" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="registerPassword" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <a href="#" id="signin-link">Go to Login</a>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" id="register-btn" class="btn btn-default">Register</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    <div id="login-form">
+      <h1 class="text-center">Sign In</h1>
+      <form class="form-horizontal col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+        <div class="form-group">
+          <div class="alert alert-danger hide" role="alert" id='signInErrorDiv'>
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            <span id='signin-error-messaage'></span>
+          </div>
+          <label for="inputEmail" class="col-sm-2 control-label log-in">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <a href="#" id="register-link">Need to Register?</a>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" id="signin-btn" class="btn btn-default">Sign in</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 
-  <div id="login-form">
-
-  </div>
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
   <script src="./dist/app.js"></script>
 </body>
 </html>
