@@ -1,6 +1,8 @@
 const dom = require('./dom');
 const firebaseApi = require('./firebaseApi');
 
+// Create Tasks
+
 const addTaskBtn = () => {
   $('#add-task-btn').on('click', (e) => {
     e.preventDefault();
@@ -42,8 +44,20 @@ const grabUserInput = () => {
   return newInput;
 };
 
+// Read Tasks
+const getAllTasks = () => {
+  firebaseApi.viewSavedTasks()
+    .then((tasksArray) => {
+      dom.newTaskToAdd(tasksArray);
+    })
+    .catch((errr) => {
+      console.error('Something fudged up while pulling data from Firebase', errr);
+    });
+};
+
 const initializer = () => {
   addTaskBtn();
+  getAllTasks();
 };
 
 module.exports = {
