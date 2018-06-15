@@ -1,3 +1,5 @@
+const events = require('./events/main');
+
 const authEvents = () =>
 {
   $('#signin-btn').click((e) =>
@@ -6,8 +8,7 @@ const authEvents = () =>
     const email = $('#inputEmail').val();
     const pass = $('#inputPassword').val();
     firebase.auth().signInWithEmailAndPassword(email, pass)
-      .then((user) =>
-      {
+      .then((user) => {
       })
       .catch((err) =>
       {
@@ -53,9 +54,31 @@ const authEvents = () =>
   });
 };
 
+const eventsArray = [
+  {
+    'userUid': '5ykBb0xyadPZLgH4EPO4i88HIql2',
+    'event': 'Tug-O-War',
+    'startDate': 1528763298535,
+    'location': 'Woods',
+  },
+  {
+    'userUid': '5ykBb0xyadPZLgH4EPO4i88HIql2',
+    'event': 'Tug-O-War',
+    'startDate': 1528763298535,
+    'location': 'Woods',
+  },
+  {
+    'userUid': '5ykBb0xyadPZLgH4EPO4i88HIql2',
+    'event': 'Tug-O-War',
+    'startDate': 1528763298535,
+    'location': 'Woods',
+  },
+];
+
 const initializer = () =>
 {
   authEvents();
+  events.eventsAdded(eventsArray);
 };
 
 module.exports =
