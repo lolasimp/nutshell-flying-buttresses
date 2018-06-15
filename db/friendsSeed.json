@@ -12,10 +12,10 @@
   "isPending": true
 },
 "fObject3": {
-  "userUid": "friend1",
-  "friendUid": "user1",
-  "isAccepted": true,
-  "isPending": false
+  "userUid": "1ryRLcfum2VUg44T5rL0NhRyW3r1",
+  "friendUid": "9ctH49g3ZwVCCzttc91rWeGpzLm1",
+  "isAccepted": false,
+  "isPending": true
 },
 "fObject4": {
   "userUid": "friend2",

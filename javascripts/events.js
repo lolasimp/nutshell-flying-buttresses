@@ -1,5 +1,4 @@
 const message = require ('./messages/main');
-const firebaseFriends = require('./friends/firebaseFriends.js');
 
 const authEvents = () =>
 {
@@ -10,7 +9,6 @@ const authEvents = () =>
     const pass = $('#inputPassword').val();
     firebase.auth().signInWithEmailAndPassword(email, pass)
       .then((user) => {
-        firebaseFriends.getFriendRequests();
       })
       .catch((err) =>
       {
