@@ -66,7 +66,7 @@ const updateFriendRequest = (requestResponse) => {
     requestResponse.friendUid = getUID();
     $.ajax({
       method: `POST`,
-      url: `${config.databaseURL}/friends/${requestResponse.id}.json`,
+      url: `${config.databaseURL}/friends/${requestResponse.requestId}.json`,
       data: JSON.stringify(requestResponse),
     }).done((data) => {
       resolve(data);
