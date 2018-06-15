@@ -1,11 +1,11 @@
 const dom = require('./../dom');
 
 const messageBuilder = (messageArray) => {
-  console.log(messageArray);
+  console.log('My Array: ', messageArray);
   let messageString = '';
   messageArray.forEach((message) => {
-    console.log(message);
-    messageString += `<div class='message' data-firebase-id="${message.id}>`;
+    console.log('My message: ', message);
+    messageString += `<div class='message' data-firebase-id="${message.id}">`;
     messageString +=    `<div class='row'>`;
     messageString +=       `<div class='col-sm-10'>`;
     messageString +=          `<div class='row message-padding-left'>`;
