@@ -60,14 +60,23 @@ const getFriendRequests = () => {
   });
 };
 
-// const updateFriendRequest = () => {
-//   new Promise ((resolve, reject) => {
-//     $.ajax().done((data)).fail((err) => {
-
-//     });
-//   });
-// };
+const updateFriendRequest = (requestResponse) => {
+  new Promise ((resolve, reject) => {
+    const config = getFirebaseConfig();
+    requestResponse.friendUid = getUID();
+    $.ajax({
+      method: `POST`,
+      url: `${config.databaseURL}/friends/${requestResponse.id}.json`,
+      data: JSON.stringify(requestResponse),
+    }).done((data) => {
+      resolve(data);
+    }).fail((err) => {
+      reject(err);
+    });
+  });
+};
 
 module.exports = {
+  updateFriendRequest,
   getFriendRequests,
 };
