@@ -40,3 +40,34 @@ body {
 .friend-request {
   margin-right: 15px;
 }
+
+/* modal placement */
+
+.event-modal-content {
+  height: 333px;
+  width: 598px;
+}
+
+.event-input-group {
+  padding: 18px;
+}
+
+.close-event {
+  height: 30px;
+  width: 30px;
+}
+
+.event-modal-title {
+  font-size: 23px;
+  color: black;
+}
+
+/* .event-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px 50px 20px 20px;
+  overflow: auto;
+} */
