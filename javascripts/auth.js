@@ -23,6 +23,7 @@ const checkLoginStatus = () =>
       $('#articles-main-container').addClass('hide');
       $('#friends-main-container').addClass('hide');
       $('#authScreen').removeClass('hide');
+      $('#friend-requests').html('');
     }
   });
 };

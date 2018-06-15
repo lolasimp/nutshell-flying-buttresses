@@ -41,12 +41,6 @@ const getUsers = () => {
 };
 
 const getFriendRequests = () => {
-  // getMyFriends().then((data) => {
-  //   console.log('Get Friends Data: ', data);
-  // }).catch((err) => {
-  //   console.error('get Friends error: ', err);
-  // });
-
   Promise.all([getMyFriends(), getUsers(),]).then((friendRequests) => {
     const allFriendRequests = [];
     friendRequests[0].forEach((request) => {
