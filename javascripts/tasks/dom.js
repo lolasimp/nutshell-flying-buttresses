@@ -5,16 +5,16 @@ const newTaskToAdd = (taskArray) => {
   console.log(taskArray);
 
   let domString = '';
-  Object.keys(taskArray).forEach((task) => {
+  taskArray.forEach((task) => {
     console.log(task);
     domString += `<div class="panel panel-default">`;
     domString +=   `<div class="panel-body">`;
-    domString +=     `${task}`;
+    domString +=     `${task.task}`;
     domString +=   `</div>`;
     domString += `</div>`;
   });
 
-  printToDom('where-tasks-live', domString);
+  printToDom('print-tasks-here', domString);
 };
 
 // universal print function
