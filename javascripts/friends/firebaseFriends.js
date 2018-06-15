@@ -60,6 +60,14 @@ const getFriendRequests = () => {
   });
 };
 
+// const updateFriendRequest = () => {
+//   new Promise ((resolve, reject) => {
+//     $.ajax().done((data)).fail((err) => {
+
+//     });
+//   });
+// };
+
 module.exports = {
   getFriendRequests,
 };
