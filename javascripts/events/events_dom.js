@@ -1,3 +1,4 @@
+
 const eventsAdded = (ThingsToDoArray) => {
   let strang = '';
   // strang += `<div><span>Upcoming Events<span></div>`;
@@ -28,8 +29,8 @@ const eventsAdded = (ThingsToDoArray) => {
     // }
   });
   // writeToDom(strang, 'upcomingEvents');
-  $('#events-main-container').removeClass('hide');
   printToDom('#upcomingEvents', strang);
+  $('#events-main-container').removeClass('hide');
 };
 
 const printToDom = (id, string) => {
