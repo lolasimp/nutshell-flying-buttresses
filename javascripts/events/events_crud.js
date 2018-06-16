@@ -52,7 +52,15 @@ const saveEvent = (newEvent) => {
   });
 };
 
+const callSavedEvent = () => {
+  saveEvent().then((saveArray) => {
+    dom.eventsSaved(saveArray);
+  }).catch((err) => {
+    console.error('Failed To Load all events: ', err);
+  });
+};
+
 module.exports = {
-  saveEvent,
+  callSavedEvent,
   callAllEvents,
 };
