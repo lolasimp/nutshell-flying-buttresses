@@ -28,9 +28,7 @@ const eventsAdded = (ThingsToDoArray) => {
     strang += `</div>`;
     // }
   });
-  // writeToDom(strang, 'upcomingEvents');
   printToDom('#upcomingEvents', strang);
-  $('#events-main-container').removeClass('hide');
 };
 
 const printToDom = (id, string) => {
