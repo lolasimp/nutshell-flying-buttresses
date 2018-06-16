@@ -9,6 +9,7 @@
   <title>Nutshell-Flying-Buttresses</title>
 </head>
 <body>
+
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -27,7 +28,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#" id="auth">Authentication</a></li>
           <li><a href="#" id="mess" class="hide">Messages</a></li>
-          <li><a href="#" id="tsk" class="hide">Tasks</a></li>
+          <li><a href="#tasks-main-container" id="tsk" class="hide">Tasks</a></li>
           <li><a href="#" id="evnts" class="hide">Events</a></li>
           <li><a href="#" id="artcls" class="hide">Articles</a></li>
           <li><a href="#" id="frnds" class="hide">Friends</a></li>
@@ -38,6 +39,7 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+
 
   <div id="friend-requests" class="row col-sm-12">
 
@@ -82,7 +84,15 @@
   </div>
 
   <div id="tasks-main-container" class=" .col-md-4 row">
-    <p>poop</p>
+    <h3>My Tasks</h3>
+    <div id="where-tasks-live" class="tasks"></div>
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="task-add">New Task:</label>
+        <input type="text" class="form-control" id="task-add" placeholder="Enter new task...">
+      </div>
+      <button type="submit" id="add-task-btn" class="btn btn-default">Add Task</button>
+    </form>
   </div>
 
   <div id="events-main-container" class="row">
@@ -135,7 +145,7 @@
     <p>poop</p>
   </div>
 
-  <div id="friends-main-container" class="hide row">
+  <div id="friends-main-container" class="row">
     <p>poop</p>
   </div>
 
