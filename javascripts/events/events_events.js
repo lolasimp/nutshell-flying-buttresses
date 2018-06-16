@@ -1,7 +1,7 @@
-const eventFirebase = require('./events_firebase');
+const eventFirebase = require('./events_crud');
 
 const makeEvent = () => {
-  $('#save-event-btn').on('click', (e) => {
+  $(document).on('click', '#save-event-btn', (e) => {
     const eventNameToAdd = $('#typed-event-name').val();
     const eventLocationToAdd = $('#typed-event-location').val();
     const eventDateToAdd = $('#typed-event-date').val();
@@ -10,7 +10,7 @@ const makeEvent = () => {
       'event': `${eventLocationToAdd}`,
       'location': `${eventDateToAdd}`,
     };
-    eventFirebase.getEvents(eventPrintToPage)
+    eventFirebase.getAllEvents(eventPrintToPage)
       .catch((error) => {
         console.error('error not getting it', error);
       });

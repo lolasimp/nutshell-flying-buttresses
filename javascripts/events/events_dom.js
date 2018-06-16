@@ -1,3 +1,6 @@
+const printToDom = (id, string) => {
+  $(id).html(string);
+};
 
 const eventsAdded = (ThingsToDoArray) => {
   let strang = '';
@@ -29,10 +32,6 @@ const eventsAdded = (ThingsToDoArray) => {
     // }
   });
   printToDom('#upcomingEvents', strang);
-};
-
-const printToDom = (id, string) => {
-  $(id).html(string);
 };
 
 module.exports = {

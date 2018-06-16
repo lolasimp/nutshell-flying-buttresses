@@ -1,9 +1,10 @@
-const eventsEvents = require('./events_events');
+// const eventEvent = require('./events_crud');
 
-const initialEvents = () => {
-  eventsEvents.makeEvent();
+const initialierEvents = () => {
+  // eventEvent.callAllEvents();
+  // eventEvent.saveEvent();
 };
 
 module.exports = {
-  initialEvents,
+  initialierEvents,
 };
