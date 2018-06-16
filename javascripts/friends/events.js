@@ -22,11 +22,7 @@ const requestResponse = (e) => {
       isAccepted: false,
       isPending: false,
     };
-    firebaseFriends.updateFriendRequest(rejectedRequest).then(() => {
-      friendRequest.addClass('hide');
-    }).catch((err) => {
-      console.error('Rejecting Friend Request Failed: ', err);
-    });;
+    firebaseFriends.updateFriendRequest(rejectedRequest);
   }
   friendRequest.addClass('hide');
 };
