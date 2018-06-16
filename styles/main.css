@@ -31,12 +31,16 @@ body {
   overflow-y: scroll;
   height: 400px;
   margin-top: 10px;
+  margin-bottom: 10px;
   background-color: ghostwhite;
   border: 1px solid grey;
 }
-
-.row {
+.row, .message {
   margin: 5px;
+}
+
+#module-head {
+  padding-left: 10px;
 }
 /* END MESSAGE STYLING */
 
