@@ -122,13 +122,15 @@ const suggestFriends = () => {
     const myId = getUID();
     friendsAndUsers2[1].forEach((user) => {
       let relationships = 0;
-      friendsAndUsers2[0].forEach((friendObject) => {
-        if ((friendObject.userUid === myId && friendObject.userUid === user.uid) || (friendObject.friendUid === myId && friendObject.userUid === user.uid)) {
-          relationships += 1;
-        };
-      });
-      if (relationships === 0) {
-        suggestFriendsArray.push(user);
+      if (user.uid !== myId) {
+        friendsAndUsers2[0].forEach((friendObject) => {
+          if ((friendObject.userUid === myId && friendObject.userUid === user.uid) || (friendObject.friendUid === myId && friendObject.userUid === user.uid)) {
+            relationships += 1;
+          };
+        });
+        if (relationships === 0) {
+          suggestFriendsArray.push(user);
+        }
       }
     });
     toDom.suggestedFriends(suggestFriendsArray);
