@@ -3,7 +3,6 @@ const firebaseAPI = require('../../auth/firebaseAPI');
 const saveArticle = (newArticle) =>
 {
   const firebaseConfig = firebaseAPI.getFirebaseConfig();
-  console.log('poop', firebaseConfig);
   newArticle.userUid = firebaseAPI.getUID();
   return new Promise ((resolve, reject) =>
   {
@@ -33,7 +32,7 @@ const getAllArticles = () =>
     $.ajax(
       {
         method: 'GET',
-        url: `${firebaseConfig.databaseURL}/articles.json?orderBy="uid"&equalTo="${uid}"`,
+        url: `${firebaseConfig.databaseURL}/articles.json?orderBy="userUid"&equalTo="${uid}"`,
       })
       .done((allArticlesObject) =>
       {
@@ -46,6 +45,7 @@ const getAllArticles = () =>
           });
         }
         resolve(allArticlesArr);
+        console.log(allArticlesArr);
       })
       .fail((err) =>
       {

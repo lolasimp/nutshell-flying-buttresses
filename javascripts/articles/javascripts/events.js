@@ -1,4 +1,5 @@
 const firebaseAPI = require('./firebaseAPI');
+const dom = require('./dom');
 
 const saveArticleEvent = () =>
 {
@@ -16,6 +17,7 @@ const saveArticleEvent = () =>
     firebaseAPI.saveArticle(articleToAdd)
       .then(() =>
       {
+        getAllArticlesEvent();
       })
       .catch((err) =>
       {
@@ -24,26 +26,26 @@ const saveArticleEvent = () =>
   });
 };
 
-const getAllMoviesEvent = () =>
+const getAllArticlesEvent = () =>
 {
   firebaseAPI.getAllArticles()
     .then((articlesArr) =>
     {
-      console.log(articlesArr);
+      dom.domStringBuilder(articlesArr);
     })
     .catch((err) =>
     {
-      console.error(err);
+      console.error('damn',err);
     });
 };
 
 const initializer = () =>
 {
   saveArticleEvent();
-  getAllMoviesEvent();
 };
 
 module.exports =
 {
   initializer,
+  getAllArticlesEvent,
 };
