@@ -15,7 +15,7 @@ const requestResponse = (e) => {
       isPending: false,
     };
     firebaseFriends.updateFriendRequest(acceptedRequest);
-  } else if ((e.target).hasClass('reject')) {
+  } else if ($(e.target).hasClass('reject')) {
     const rejectedRequest = {
       requestId: friendRequest.data('requestid'),
       userUid: friendRequest.data('userid'),
