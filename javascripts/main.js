@@ -1,5 +1,5 @@
-const init = require('./events');
-const api = require('./apiKeys');
+const init = require('./auth/events');
+const api = require('./auth/apiKeys');
 const test = require('./friends/events.js');
 
 api.retrieveKeys();

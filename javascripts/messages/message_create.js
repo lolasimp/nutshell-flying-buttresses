@@ -1,4 +1,4 @@
-const firebaseAPI = require('../firebaseAPI');
+const firebaseAPI = require('../auth/firebaseAPI');
 
 const saveMessage = (newMessage) => {
   const uid = firebaseAPI.getUID();
