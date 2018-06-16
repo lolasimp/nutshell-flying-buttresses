@@ -1,7 +1,7 @@
-const firebaseAPI = require('../firebaseAPI');
+const firebaseAPI = require('../auth/firebaseAPI');
 
 const deleteMessage = (messageId) => {
-  const firebaseConfig = firebaseAPI.getConfig();
+  const firebaseConfig = firebaseAPI.getFirebaseConfig();
   return new Promise((resolve, reject) => {
     $.ajax({
       method: 'DELETE',

@@ -1,5 +1,5 @@
-const firebaseAPI = require('./firebaseAPI');
-const {checkLoginStatus,} = require('./auth');
+const firebaseAPI = require('./firebaseAPI.js');
+const {checkLoginStatus,} = require('./auth.js');
 
 const apiKeys = () =>
 {

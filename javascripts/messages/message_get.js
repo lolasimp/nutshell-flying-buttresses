@@ -1,8 +1,8 @@
-const firebaseAPI = require('../firebaseAPI');
+const firebaseAPI = require('../auth/firebaseAPI');
 
 const getAllMessages = () => {
   return new Promise((resolve, reject) => {
-    const firebaseConfig = firebaseAPI.getConfig();
+    const firebaseConfig = firebaseAPI.getFirebaseConfig();
     const allMessagesArray = [];
     $.ajax({
       method: 'GET',

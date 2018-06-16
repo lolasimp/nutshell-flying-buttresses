@@ -16,7 +16,6 @@ const saveArticleEvent = () =>
     firebaseAPI.saveArticle(articleToAdd)
       .then(() =>
       {
-        console.log(articleToAdd);
       })
       .catch((err) =>
       {
@@ -25,9 +24,23 @@ const saveArticleEvent = () =>
   });
 };
 
+const getAllMoviesEvent = () =>
+{
+  firebaseAPI.getAllArticles()
+    .then((articlesArr) =>
+    {
+      console.log(articlesArr);
+    })
+    .catch((err) =>
+    {
+      console.error(err);
+    });
+};
+
 const initializer = () =>
 {
   saveArticleEvent();
+  getAllMoviesEvent();
 };
 
 module.exports =
