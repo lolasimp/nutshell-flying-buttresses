@@ -12,8 +12,14 @@ const setUID = (newUID) => {
   console.error(uid);
 };
 
+const getUID = () =>
+{
+  return uid;
+};
+
 module.exports =
 {
   setConfig,
   setUID,
+  getUID,
 };

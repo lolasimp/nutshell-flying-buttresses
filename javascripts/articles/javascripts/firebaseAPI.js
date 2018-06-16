@@ -1,41 +1,8 @@
-// let fireBaseConfig = {};
-
-// const setConfig = (fbConfig) =>
-// {
-//   fireBaseConfig = fbConfig;
-// };
-
-// const apiKeys = () =>
-// {
-//   return new Promise((resolve, reject) =>
-//   {
-//     $.ajax('./db/apiKeys.json')
-//       .done((data) =>
-//       {
-//         resolve(data.apiKeys);
-//       })
-//       .fail((err) =>
-//       {
-//         reject(err);
-//       });
-//   });
-// };
-
-// const getUrl = () =>
-// {
-//   apiKeys()
-//     .then((result) =>
-//     {
-//       setConfig(result);
-//     }).catch((err) =>
-//     {
-//       console.error(err);
-//     });
-// };
+const firebase = require('../../firebaseAPI');
 
 const saveArticle = (newArticle) =>
 {
-  // newArticle.uid = uid;
+  newArticle.uid = firebase.getUID();
   return new Promise ((resolve, reject) =>
   {
     $.ajax({
