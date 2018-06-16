@@ -18,6 +18,7 @@ const checkLoginStatus = () =>
       // GET DATA FROM FIREBASE AND SET MESSAGE BOARD LISTENERS
       initMessageBoard();
       firebaseFriends.getFriendRequests();
+      firebaseFriends.friendsList();
     } else {
       $('#mess, #tsk, #evnts, #artcls, #frnds, #logout').addClass('hide');
       $('#message-main-container').addClass('hide');

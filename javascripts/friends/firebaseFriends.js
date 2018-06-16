@@ -65,7 +65,7 @@ const updateFriendRequest = (requestResponse) => {
     const config = getFirebaseConfig();
     requestResponse.friendUid = getUID();
     $.ajax({
-      method: `POST`,
+      method: `PUT`,
       url: `${config.databaseURL}/friends/${requestResponse.requestId}.json`,
       data: JSON.stringify(requestResponse),
     }).done((data) => {
@@ -76,7 +76,64 @@ const updateFriendRequest = (requestResponse) => {
   });
 };
 
+const friendsList = () => {
+  Promise.all([getMyFriends(), getUsers(),]).then((friendsAndUsers) => {
+    const myFriends = [];
+    friendsAndUsers[0].forEach((friendObject) => {
+      if (friendObject.isAccepted) {
+        friendsAndUsers[1].forEach((user) => {
+          if (friendObject.userUid === user.uid) {
+            const newFriend = {};
+            newFriend.id = friendObject.id;
+            newFriend.username = user.username;
+            myFriends.push(newFriend);
+          }
+        });
+      }
+    });
+    toDom.printMyFriends(myFriends);
+  }).catch((err) => {
+    console.error('Friends list failed to load: ', err);
+  });
+};
+
+const getAllFriendObjects = () => {
+  return new Promise((resolve, reject) => {
+    const friendsArray = [];
+    const config = getFirebaseConfig();
+    $.ajax({
+      method: `GET`,
+      url: `${config.databaseURL}/friends.json`,
+    }).done((friends) => {
+      Object.keys(friends).forEach((key) => {
+        friends[key].id = key;
+        friendsArray.push(friends[key]);
+      });
+      resolve(friendsArray);
+    }).fail((err) => {
+      reject(err);
+    });
+  });
+};
+
+const suggestFriends = () => {
+  Promise.all([getAllFriendObjects(), getUsers(),]).then((friendsAndUsers2) => {
+    const suggestFriendsArray = [];
+    const myId = getUID();
+    friendsAndUsers2[1].forEach((user) => {
+      friendsAndUsers2[0].forEach((friendObject) => {
+        if (!((friendObject.userUid === myId) || (friendObject.friendUid === myId))) {
+          suggestFriends.push(user);
+        };
+      });
+    });
+  }).catch((err) => {
+    console.error('Suggested friends failed: ', err);
+  });
+};
+
 module.exports = {
   updateFriendRequest,
   getFriendRequests,
+  friendsList,
 };
