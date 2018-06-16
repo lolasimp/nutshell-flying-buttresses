@@ -52,7 +52,43 @@
   </div>
 
   <div id="articles-main-container" class="hide row">
-    <p>poop</p>
+    <div id="articles" class="col-md-6 col-md-offset-2">
+      <h2>Articles</h2>
+      <p>Poop Poop Poop Poop Poop Poop Poop Poop Poop Poop Poop Poop Poop Poop Poop Poop </p>
+    </div>
+    <div id="newArticleBtn" class="col-md-2">
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Save Article
+      </button>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+              <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="titleInput">Title</span>
+                <input type="text" class="form-control titleInput" placeholder="Article Title" aria-describedby="titleInput">
+              </div>
+              <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="urlInput">URL</span>
+                <input type="text" class="form-control urlInput" placeholder="Article URL" aria-describedby="urlInput">
+              </div>
+              <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="synopsisInput">Synopsis</span>
+                <textarea rows="3" type="text" class="form-control synopsisInput" placeholder="Article Synopsis" aria-describedby="synopsisInput"></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary articleToAddToList">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="friends-main-container" class="hide row">
