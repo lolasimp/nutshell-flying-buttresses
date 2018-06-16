@@ -9,7 +9,7 @@ const setUID = (newUID) => {
   uid = newUID;
 };
 
-const getSavedEvents = (whatILike) => {
+const getEvents = (whatILike) => {
   whatILike.uid = uid;
   return new Promise((resolve, reject) => {
     $.ajax({
@@ -29,5 +29,5 @@ const getSavedEvents = (whatILike) => {
 module.exports = {
   setUID,
   setConfig,
-  getSavedEvents,
+  getEvents,
 };

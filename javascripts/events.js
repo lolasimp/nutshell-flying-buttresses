@@ -1,5 +1,5 @@
 const message = require ('./messages/message_main');
-// const events = require('./events/events_main');
+const events = require('./events/events_main');
 
 const authEvents = () =>
 {
@@ -81,7 +81,7 @@ const initializer = () =>
   // GET DATA FROM FIREBASE AND SET MESSAGE BOARD LISTENERS
   message.initMessageBoard();
   authEvents();
-  // events.eventsAdded(eventsArray);
+  events.initialEvents();
 };
 
 module.exports =

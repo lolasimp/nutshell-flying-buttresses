@@ -1,4 +1,3 @@
-// const dom = require('../dom.js');
 const eventsAdded = (ThingsToDoArray) => {
   let strang = '';
   // strang += `<div><span>Upcoming Events<span></div>`;
@@ -28,17 +27,15 @@ const eventsAdded = (ThingsToDoArray) => {
     strang += `</div>`;
     // }
   });
+  // writeToDom(strang, 'upcomingEvents');
   $('#events-main-container').removeClass('hide');
-  writeToDom(strang, 'upcomingEvents');
+  printToDom('#upcomingEvents', strang);
 };
 
-// eventsAdded(eventsArray);
-
-const writeToDom = (myString, myElement) => {
-  $(`#${myElement}`).html(myString);
+const printToDom = (id, string) => {
+  $(id).html(string);
 };
 
 module.exports = {
   eventsAdded,
-  // callEvents,
 };
