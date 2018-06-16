@@ -61,6 +61,24 @@
         <!-- MESSAGES WILL BE WRITTEN HERE -->
       </div>
     </div>
+        <!--Edit Modal -->
+    <div class="modal fade" id="edit-message-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Edit message below</h4>
+          </div>
+          <div class="modal-body">
+            <textarea name="" id="message-to-update" cols="30" rows="3"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="save-message" data-dismiss="modal">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="tasks-main-container" class=" .col-md-4 row">

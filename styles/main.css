@@ -30,6 +30,9 @@ body {
 #place-messages-here {
   overflow-y: scroll;
   height: 400px;
+  margin-top: 10px;
+  background-color: ghostwhite;
+  border: 1px solid grey;
 }
 
 .row {
