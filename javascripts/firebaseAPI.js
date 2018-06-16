@@ -4,7 +4,6 @@ let uid = '';
 const setConfig = (fbConfig) =>
 {
   fireBaseConfig = fbConfig;
-  console.error(fireBaseConfig);
 };
 
 const getConfig = () => {
@@ -17,7 +16,6 @@ const getFirebaseConfig = () => {
 
 const setUID = (newUID) => {
   uid = newUID;
-  console.error(uid);
 };
 
 const getUID = () => {

@@ -9,6 +9,7 @@
   <title>Nutshell-Flying-Buttresses</title>
 </head>
 <body>
+
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -27,7 +28,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#" id="auth">Authentication</a></li>
           <li><a href="#" id="mess" class="hide">Messages</a></li>
-          <li><a href="#" id="tsk" class="hide">Tasks</a></li>
+          <li><a href="#tasks-main-container" id="tsk" class="hide">Tasks</a></li>
           <li><a href="#" id="evnts" class="hide">Events</a></li>
           <li><a href="#" id="artcls" class="hide">Articles</a></li>
           <li><a href="#" id="frnds" class="hide">Friends</a></li>
@@ -39,12 +40,13 @@
     </div><!-- /.container-fluid -->
   </nav>
 
+
   <div id="friend-requests" class="row col-sm-12">
 
   </div>
 
   <!-- MESSAGE BOARD -->
-  <div id="message-main-container" class="hide row col-md-4 col-xs-12 col-sm-12">
+  <div id="message-main-container" class="hide row col-md-6 col-xs-12 col-sm-12">
     <div>
       <div>
         <h1>Message Board</h1>
@@ -61,10 +63,36 @@
         <!-- MESSAGES WILL BE WRITTEN HERE -->
       </div>
     </div>
+        <!--Edit Modal -->
+    <div class="modal fade" id="edit-message-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Edit message below</h4>
+          </div>
+          <div class="modal-body">
+            <textarea name="" id="message-to-update" cols="30" rows="3"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="save-message" data-dismiss="modal">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="tasks-main-container" class=" .col-md-4 row">
-    <p>poop</p>
+    <h3>My Tasks</h3>
+    <div id="where-tasks-live" class="tasks"></div>
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="task-add">New Task:</label>
+        <input type="text" class="form-control" id="task-add" placeholder="Enter new task...">
+      </div>
+      <button type="submit" id="add-task-btn" class="btn btn-default">Add Task</button>
+    </form>
   </div>
 
   <div id="events-main-container" class="row">
@@ -118,7 +146,7 @@
     <p>poop</p>
   </div>
 
-  <div id="friends-main-container" class="hide row">
+  <div id="friends-main-container" class="row">
     <p>poop</p>
   </div>
 

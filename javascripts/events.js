@@ -1,6 +1,3 @@
-const message = require ('./messages/message_main');
-const events = require('./events/events_main');
-
 const authEvents = () =>
 {
   $('#signin-btn').click((e) =>
@@ -55,33 +52,9 @@ const authEvents = () =>
   });
 };
 
-// const eventsArray = [
-//   {
-//     'userUid': '5ykBb0xyadPZLgH4EPO4i88HIql2',
-//     'event': 'Tug-O-War',
-//     'startDate': 1528763298535,
-//     'location': 'Woods',
-//   },
-//   {
-//     'userUid': '5ykBb0xyadPZLgH4EPO4i88HIql2',
-//     'event': 'Tug-O-War',
-//     'startDate': 1528763298535,
-//     'location': 'Woods',
-//   },
-//   {
-//     'userUid': '5ykBb0xyadPZLgH4EPO4i88HIql2',
-//     'event': 'Tug-O-War',
-//     'startDate': 1528763298535,
-//     'location': 'Woods',
-//   },
-// ];
-
 const initializer = () =>
 {
-  // GET DATA FROM FIREBASE AND SET MESSAGE BOARD LISTENERS
-  message.initMessageBoard();
   authEvents();
-  events.initialEvents();
 };
 
 module.exports =
