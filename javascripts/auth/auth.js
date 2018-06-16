@@ -1,6 +1,6 @@
 const {setUID,} = require('./firebaseAPI');
-const {initMessageBoard,} = require('./messages/message_main');
-const firebaseFriends = require('./friends/firebaseFriends.js');
+const {initMessageBoard,} = require('../messages/message_main');
+const firebaseFriends = require('../friends/firebaseFriends.js');
 
 const checkLoginStatus = () =>
 {

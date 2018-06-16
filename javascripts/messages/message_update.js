@@ -1,4 +1,4 @@
-const firebaseAPI = require('../firebaseAPI');
+const firebaseAPI = require('../auth/firebaseAPI');
 
 const updateFirebaseMessages = (messageId, message) => {
   message.uid = firebaseAPI.getUID();

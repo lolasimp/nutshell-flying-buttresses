@@ -1,4 +1,4 @@
-const {getFirebaseConfig, getUID,} = require('../firebaseAPI.js');
+const {getFirebaseConfig, getUID,} = require('../auth/firebaseAPI.js');
 const toDom = require('./toDom.js');
 
 const getMyFriends = () => {
