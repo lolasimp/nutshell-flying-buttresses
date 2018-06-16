@@ -2,7 +2,7 @@ const firebase = require('../../firebaseAPI');
 
 const saveArticle = (newArticle) =>
 {
-  newArticle.uid = firebase.getUID();
+  newArticle.userUid = firebase.getUID();
   return new Promise ((resolve, reject) =>
   {
     $.ajax({
