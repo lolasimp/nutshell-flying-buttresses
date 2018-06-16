@@ -121,12 +121,17 @@ const suggestFriends = () => {
     const suggestFriendsArray = [];
     const myId = getUID();
     friendsAndUsers2[1].forEach((user) => {
+      let relationships = 0;
       friendsAndUsers2[0].forEach((friendObject) => {
-        if (!((friendObject.userUid === myId) || (friendObject.friendUid === myId))) {
-          suggestFriends.push(user);
+        if ((friendObject.userUid === myId && friendObject.userUid === user.uid) || (friendObject.friendUid === myId && friendObject.userUid === user.uid)) {
+          relationships += 1;
         };
       });
+      if (relationships === 0) {
+        suggestFriendsArray.push(user);
+      }
     });
+    toDom.suggestedFriends(suggestFriendsArray);
   }).catch((err) => {
     console.error('Suggested friends failed: ', err);
   });
@@ -136,4 +141,5 @@ module.exports = {
   updateFriendRequest,
   getFriendRequests,
   friendsList,
+  suggestFriends,
 };

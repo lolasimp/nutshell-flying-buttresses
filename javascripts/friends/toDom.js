@@ -21,6 +21,7 @@ const friendRequestBuilder = (requestArray) => {
 
 const printMyFriends = (friendsArray) => {
   let stringToPrint = '';
+  stringToPrint += `<div class="panel-heading">Friends List</div>`;
   friendsArray.forEach((friend) => {
     stringToPrint += `<div>`;
     stringToPrint += `<div class="panel-body">`;
@@ -32,7 +33,22 @@ const printMyFriends = (friendsArray) => {
   appendToDom('#myFriends', stringToPrint);
 };
 
+const suggestedFriends = (friendsArray) => {
+  let stringToPrint = '';
+  stringToPrint += `<div class="panel-heading">Suggested Friends</div>`;
+  friendsArray.forEach((friend) => {
+    stringToPrint += `<div>`;
+    stringToPrint += `<div class="panel-body">`;
+    stringToPrint += `${friend.username}`;
+    stringToPrint += `<button type="button" class="btn btn-danger de-friend">Un-Friend</button>`;
+    stringToPrint += `</div>`;
+    stringToPrint += `</div>`;
+  });
+  appendToDom('#suggestedFriends', stringToPrint);
+};
+
 module.exports = {
   friendRequestBuilder,
   printMyFriends,
+  suggestedFriends,
 };
