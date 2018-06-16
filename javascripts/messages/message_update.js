@@ -11,7 +11,6 @@ const updateFirebaseMessages = (messageId, message) => {
     })
       .done((updatedMessage) => {
         resolve(updatedMessage);
-        console.log(updatedMessage);
       })
       .fail((error) => {
         reject(error);

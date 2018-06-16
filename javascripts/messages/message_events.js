@@ -3,6 +3,7 @@ const mGet = require('./message_get');
 const mDom = require('./message_dom');
 const mDelete = require('./message_delete');
 const mUpdate = require('./message_update');
+const mUser = require('./message_user');
 
 // POST MESSAGE TO FIREBASE
 const addMessageEvent = () => {
@@ -26,9 +27,10 @@ const addMessageEvent = () => {
 };
 
 const getAllMessagesEvent = () => {
+  const user = mUser.getUID();
   mGet.getAllMessages()
     .then((messagesArray) => {
-      mDom.messageBuilder(messagesArray);
+      mDom.messageBuilder(messagesArray, user);
       $('#place-messages-here').scrollTop($('#place-messages-here')[0].scrollHeight);
     })
     .catch((error) => {
