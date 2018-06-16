@@ -1,5 +1,3 @@
-const dom = require('./../dom');
-
 const messageBuilder = (messageArray) => {
   console.log('My Array: ', messageArray);
   let messageString = '';
@@ -32,7 +30,11 @@ const messageBuilder = (messageArray) => {
     messageString +=   `</div>`;
   });
 
-  dom.writeToDom(messageString, 'place-messages-here');
+  writeToDom(messageString, 'place-messages-here');
+};
+
+const writeToDom = (myString, myElement) => {
+  $(`#${myElement}`).html(myString);
 };
 
 module.exports = {
