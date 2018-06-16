@@ -4,22 +4,25 @@ let uid = '';
 const setConfig = (fbConfig) =>
 {
   fireBaseConfig = fbConfig;
-  console.error(fireBaseConfig);
+};
+
+const getConfig = () => {
+  return fireBaseConfig;
 };
 
 const setUID = (newUID) => {
   uid = newUID;
-  console.error(uid);
 };
 
-const getUID = () =>
-{
+const getUID = () => {
   return uid;
 };
 
 module.exports =
 {
   setConfig,
+  getConfig,
   setUID,
+  getConfig,
   getUID,
 };
