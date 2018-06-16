@@ -1,13 +1,15 @@
 const dom = require('./../dom');
 
 const messageBuilder = (messageArray) => {
+  console.log('My Array: ', messageArray);
   let messageString = '';
   messageArray.forEach((message) => {
-    messageString += `<div class='message' id='${messageArray.indexOf(message)}'>`;
+    console.log('My message: ', message);
+    messageString += `<div class='message' data-firebase-id="${message.id}">`;
     messageString +=    `<div class='row'>`;
     messageString +=       `<div class='col-sm-10'>`;
     messageString +=          `<div class='row message-padding-left'>`;
-    messageString +=             `<div class='col-sm-5'><h5><strong>From: </strong>${message.username}</h5></div>`;
+    messageString +=             `<div class='col-sm-5'><h5><strong>From: </strong>${message.uid}</h5></div>`;
     messageString +=             `<div class='col-sm-3'><h6><strong>At: </strong>${message.timestamp}</h6></div>`;
     if (message.isEdited === true) {
       messageString +=             `<div class='col-sm-4'><h6><em>(edited)<em></h6></div>`;
