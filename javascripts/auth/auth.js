@@ -17,9 +17,13 @@ const checkLoginStatus = () =>
       $('#friends-main-container').removeClass('hide');
       $('#authScreen').addClass('hide');
       $('#auth').addClass('hide');
+      $('#myFriends-container').removeClass('hide');
+      $('#suggestedFriends-container').removeClass('hide');
       // GET DATA FROM FIREBASE AND SET MESSAGE BOARD LISTENERS
       initMessageBoard();
       firebaseFriends.getFriendRequests();
+      firebaseFriends.friendsList();
+      firebaseFriends.suggestFriends();
       // eventsToGet.callAllEvents();
       // callSavedEvent();
     } else {
@@ -31,6 +35,10 @@ const checkLoginStatus = () =>
       $('#friends-main-container').addClass('hide');
       $('#authScreen').removeClass('hide');
       $('#friend-requests').html('');
+      $('#myFriends').html('');
+      $('#suggestedFriends').html('');
+      $('#myFriends-container').addClass('hide');
+      $('#suggestedFriends-container').addClass('hide');
     }
   });
 };
