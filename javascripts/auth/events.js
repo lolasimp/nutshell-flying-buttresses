@@ -1,5 +1,3 @@
-const firebaseAPI = require('./firebaseAPI');
-
 const authEvents = () =>
 {
   $('#signin-btn').click((e) =>
