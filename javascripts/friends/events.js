@@ -1,4 +1,7 @@
 const firebaseFriends = require('./firebaseFriends.js');
+const authFirebase = require('../auth/firebaseAPI.js');
+
+// Friend Request Response Event
 
 const addRequestEvents = () => {
   $('body').on('click', '.respond', requestResponse);
@@ -27,6 +30,25 @@ const requestResponse = (e) => {
   friendRequest.addClass('hide');
 };
 
+// Add a Friend events
+
+const addFriendEvent = () => {
+  $('body').on('click', '.add-friend', addFriend);
+};
+
+const addFriend = (e) => {
+  const newRelationship = {
+    userUid: authFirebase.getUID(),
+    friendUid: $(e.target).data('uid'),
+    isAccepted: false,
+    isPending: true,
+  };
+  firebaseFriends.createNewRelationship(newRelationship).catch((err) => {
+    console.error('Creating a Relationship Failed: ', err);
+  });
+};
+
 module.exports = {
   addRequestEvents,
+  addFriendEvent,
 };

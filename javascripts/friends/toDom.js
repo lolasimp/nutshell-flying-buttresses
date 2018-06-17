@@ -40,7 +40,7 @@ const suggestedFriends = (friendsArray) => {
     stringToPrint += `<div>`;
     stringToPrint += `<div class="panel-body">`;
     stringToPrint += `${friend.username}`;
-    stringToPrint += `<button type="button" class="btn btn-danger de-friend">Friend</button>`;
+    stringToPrint += `<button data-uid="${friend.uid}" type="button" class="btn btn-danger add-friend">Friend</button>`;
     stringToPrint += `</div>`;
     stringToPrint += `</div>`;
   });

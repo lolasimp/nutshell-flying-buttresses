@@ -139,9 +139,25 @@ const suggestFriends = () => {
   });
 };
 
+const createNewRelationship = (newRelationship) => {
+  return new Promise ((resolve, reject) => {
+    const config = getFirebaseConfig();
+    $.ajax({
+      method: `POST`,
+      url: `${config.databaseURL}/friends.json`,
+      data: JSON.stringify(newRelationship),
+    }).done((data) => {
+      resolve(data);
+    }).fail((err) => {
+      reject(err);
+    });
+  });
+};
+
 module.exports = {
   updateFriendRequest,
   getFriendRequests,
   friendsList,
   suggestFriends,
+  createNewRelationship,
 };

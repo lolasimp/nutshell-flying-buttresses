@@ -1,3 +1,10 @@
-const test = require('./friends/events.js');
+const events = require('./events.js');
 
-test.addRequestEvents();
+const initializer = () => {
+  events.addFriendEvent();
+  events.addRequestEvents();
+};
+
+module.exports = {
+  initializer,
+};
