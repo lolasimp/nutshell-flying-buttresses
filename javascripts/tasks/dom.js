@@ -4,6 +4,7 @@
 const newTaskToAdd = (taskArray) => {
   let domString = '';
   taskArray.forEach((task) => {
+
     domString += `<div class="panel panel-default">`;
     domString +=   `<div class="panel-body">`;
     domString +=     `${task.task}`;
@@ -11,7 +12,7 @@ const newTaskToAdd = (taskArray) => {
     domString += `</div>`;
   });
 
-  printToDom('where-tasks-live', domString);
+  printToDom('print-tasks-here', domString);
 };
 
 // universal print function
