@@ -1,8 +1,12 @@
-const init = require('./events');
-const api = require('./apiKeys');
-const events = require('./tasks/events');
 
+const init = require('./auth/events');
+const api = require('./auth/apiKeys');
+const test = require('./friends/events.js');
+const lastEvents = require('./events/events_main');
+const taskEvents = require('./tasks/events');
+
+taskEvents.initializer();
 api.retrieveKeys();
 init.initializer();
-events.initializer();
-// console.log(moment().format());
+test.addRequestEvents();
+lastEvents.initialierEvents();

@@ -1,9 +1,14 @@
+// MESSAGES MODULE
+// PURPOSE: A simple message board using CRUD to create and manage messages posted by all users.
+// AUTHOR: A. Slayton
+
 const messageEvents = require('./message_events');
-// const messageFirebase = require('./message_firebase');
 
 const initMessageBoard = () => {
   messageEvents.addMessageEvent();
-  // messageFirebase.getMessages();
+  messageEvents.getAllMessagesEvent();
+  messageEvents.deleteMessageEvent();
+  messageEvents.updateMessageEvent();
 };
 
 module.exports = {
