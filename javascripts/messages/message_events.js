@@ -30,8 +30,8 @@ const getAllMessagesEvent = () => {
   const user = mUsers.getUID();
   mGet.getAllMessages()
     .then((messagesArray) => {
-      mDom.messageBuilder(messagesArray, user);
-      $('#place-messages-here').scrollTop($('#place-messages-here')[0].scrollHeight);
+      getUsers(messagesArray, user);
+
     })
     .catch((error) => {
       console.error('error in get all messages', error);
@@ -86,11 +86,11 @@ const updateMessageBoard = () => {
   });
 };
 
-const getUsers = () => {
+const getUsers = (messagesArray, user) => {
   mUsers.getAllUsers()
     .then((usersArray) => {
-      console.log(usersArray);
-      mUsers.convertUsers(usersArray);
+      mDom.messageBuilder(messagesArray, user, usersArray);
+      $('#place-messages-here').scrollTop($('#place-messages-here')[0].scrollHeight);
     })
     .catch((error) => {
       console.error('error in get all users', error);

@@ -1,11 +1,21 @@
-const messageBuilder = (messageArray, currentUser) => {
+const messageBuilder = (messageArray, currentUser, allUserArray) => {
   let messageString = '';
+  let username = '';
   messageArray.forEach((message) => {
+    for (let i = 0; i < allUserArray.length; i++) {
+      if (allUserArray[i].uid === message.uid) {
+        username = allUserArray[i].username;
+        break;
+      } else {
+        username = message.uid;
+      };
+    };
     messageString += `<div class='message' data-firebase-id="${message.id}" data-user-id="${message.uid}">`;
     messageString +=    `<div class='row'>`;
     messageString +=       `<div class='col-sm-10'>`;
     messageString +=          `<div class='row message-padsding-left'>`;
-    messageString +=             `<div class='col-sm-5'><h5><strong>From: </strong>${message.uid}</h5></div>`;
+
+    messageString +=             `<div class='col-sm-5'><h5><strong>From: </strong>${username}</h5></div>`;
     messageString +=             `<div class='col-sm-3'><h6><strong>At: </strong><span class="timestamp">${message.timestamp}</span></h6></div>`;
     if (message.isEdited === true) {
       messageString +=             `<div class='col-sm-4'><h6><em>(edited)</em></h6></div>`;
