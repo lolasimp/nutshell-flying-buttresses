@@ -18,19 +18,19 @@ const saveNewTask = (newTask) => {
 
 // READ
 const viewSavedTasks = () => {
-  const tasksPlusFirebaseKeys = [];
   return new Promise((resolve, reject) => {
+    const tasksPlusFirebaseKeys = [];
     $.ajax(`https://nutshell-flying-buttresses.firebaseio.com/tasks.json`)
-      .then((allTasks) => {
+      .done((allTasks) => {
         if (allTasks !== null) {
           Object.keys(allTasks).forEach((key) => {
             allTasks[key].id = key;
             tasksPlusFirebaseKeys.push(allTasks[key]);
           });
         }
-        resolve(allTasks);
+        resolve(tasksPlusFirebaseKeys);
       })
-      .catch((error) => {
+      .fail((error) => {
         reject(error);
       });
   });
