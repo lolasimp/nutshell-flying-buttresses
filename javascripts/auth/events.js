@@ -1,3 +1,5 @@
+// const register = require('./firebaseRegister.js');
+
 const authEvents = () =>
 {
   $('#signin-btn').click((e) =>
@@ -19,7 +21,14 @@ const authEvents = () =>
   {
     const email = $('#registerEmail').val();
     const pass = $('#registerPassword').val();
-    firebase.auth().createUserWithEmailAndPassword(email, pass).catch((error) => {
+    firebase.auth().createUserWithEmailAndPassword(email, pass).then(function (user) {
+      console.log('Data from firebase after registering: ', firebase.User);
+      // const addUser = {
+      //   uid: ,
+      //   username: $('#registerUsername').val(),
+      // };
+      // register.createUser();
+    }).catch((error) => {
       $('#registerError').text(error.message);
       $('#registerErrorDiv').removeClass('hide');
       console.error(error.message);
