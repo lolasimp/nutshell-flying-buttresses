@@ -71,12 +71,12 @@
   </div>
 
   <!-- MESSAGE BOARD -->
-  <div id="message-main-container" class="hide row col-md-6 col-xs-12 col-sm-12">
+  <div id="message-main-container" class=" row hide">
     <div>
       <div>
-        <h1>Message Board</h1>
+        <h1 id="module-head">Message Board</h1>
         <div>
-          <div class="input-group">
+          <div class="input-group col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
             <input type="text" class="form-control" placeholder="Type Message Here..." id="user-message-input">
             <span class="input-group-btn">
               <button class="btn btn-default" type="button" title="Print Message To Board" id="submit-message">Submit</button>
@@ -84,7 +84,7 @@
           </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
       </div>
-      <div id="place-messages-here">
+      <div id="place-messages-here" class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
         <!-- MESSAGES WILL BE WRITTEN HERE -->
       </div>
     </div>
@@ -108,7 +108,20 @@
     </div>
   </div>
 
-  <div id="tasks-main-container" class=".col-md-4 row">
+  <div id='myFriends-container' class="row col-sm-2">
+    <div id='myFriends' class="panel panel-info">
+
+    </div>
+  </div>
+
+  <div id='suggestedFriends-container' class="row col-sm-2">
+      <div id='suggestedFriends' class="panel panel-info">
+
+
+      </div>
+    </div>
+
+  <div id="tasks-main-container" class=" .col-md-4 row">
     <h3>My Tasks</h3>
     <div id="where-tasks-live" class="tasks"></div>
     <form class="form-inline">
@@ -165,7 +178,7 @@
       <h2>Are the events here?</h2>
     </div>
   </div>
-</div>
+  </div>
 
   <div id="articles-main-container" class="hide row">
     <p>poop</p>
