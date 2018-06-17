@@ -12,7 +12,7 @@ const newTaskToAdd = (taskArray) => {
     domString += `</div>`;
   });
 
-  printToDom('print-tasks-here', domString);
+  printToDom('where-tasks-live', domString);
 };
 
 // universal print function

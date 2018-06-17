@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<div id='print-tasks-here'><h1>Test</h1></div>
+<!-- <div id='print-tasks-here'><h1>Test</h1></div> -->
 
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -43,31 +43,7 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-  <form class="form-horizontal col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2 hide">
-      <div class="form-group">
-        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-        <div class="col-sm-10">
-          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="inputUsername3" class="col-sm-2 control-label">Username</label>
-        <div class="col-sm-10">
-          <input type="username" class="form-control" id="inputUsername3" placeholder="Username">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <div class="checkbox">
-            <a href="#" id="register-link">Need to Register?</a>
-          </div>
-        </div>
+
   <div id="friend-requests" class="hide row col-sm-12">
 
   </div>
@@ -123,9 +99,8 @@
       </div>
     </div>
 
-  <div id="tasks-main-container" class=" .col-md-4 row">
+  <div id="tasks-main-container" class="col-md-4 row">
     <h3>My Tasks</h3>
-    <div id="where-tasks-live" class="tasks"></div>
     <form class="form-inline">
       <div class="form-group">
         <label for="task-add">New Task:</label>
@@ -133,6 +108,7 @@
       </div>
       <button type="submit" id="add-task-btn" class="btn btn-default">Add Task</button>
     </form>
+    <div id="where-tasks-live" class="tasks"></div>
   </div>
 
   <div id="events-main-container" class="row">
@@ -191,7 +167,7 @@
   </div>
 
   <div id="authScreen">
-    <div id="registration-form" class="">
+    <div id="registration-form" class="hide">
         <h1 class="text-center">Registration</h1>
         <form class="form-horizontal col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
           <div class="alert alert-danger hide" role="alert" id="registerErrorDiv">
