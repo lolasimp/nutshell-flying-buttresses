@@ -4,7 +4,6 @@
 const newTaskToAdd = (taskArray) => {
   let domString = '';
   taskArray.forEach((task) => {
-
     domString += `<div class="panel panel-default">`;
     domString +=   `<div class="panel-body">`;
     domString +=     `${task.task}`;
