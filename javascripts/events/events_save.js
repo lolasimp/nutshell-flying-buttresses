@@ -1,7 +1,7 @@
 const firebaseAPI = require('../auth/firebaseAPI');
 // const dom = require('./events_dom');
 
-const saveMyNewEvent = (newEvent) => {
+const saveToPost = (newEvent) => {
   const uid = firebaseAPI.getUID();
   newEvent.uid = uid;
   const firebaseConfig = firebaseAPI.getConfig();
@@ -21,5 +21,5 @@ const saveMyNewEvent = (newEvent) => {
 };
 
 module.exports = {
-  saveMyNewEvent,
+  saveToPost,
 };
