@@ -25,14 +25,13 @@ const saveArticle = (newArticle) =>
 const getAllArticles = () =>
 {
   const firebaseConfig = firebaseAPI.getFirebaseConfig();
-  const uid = firebaseAPI.getUID();
   return new Promise((resolve, reject) =>
   {
     const allArticlesArr = [];
     $.ajax(
       {
         method: 'GET',
-        url: `${firebaseConfig.databaseURL}/articles.json?orderBy="userUid"&equalTo="${uid}"`,
+        url: `${firebaseConfig.databaseURL}/articles.json`,
       })
       .done((allArticlesObject) =>
       {
@@ -45,7 +44,6 @@ const getAllArticles = () =>
           });
         }
         resolve(allArticlesArr);
-        console.log(allArticlesArr);
       })
       .fail((err) =>
       {
@@ -54,8 +52,52 @@ const getAllArticles = () =>
   });
 };
 
+const deleteArticle = (articleId) =>
+{
+  const firebaseConfig = firebaseAPI.getFirebaseConfig();
+  return new Promise((resolve, reject) =>
+  {
+    $.ajax({
+      method: 'DELETE',
+      url: `${firebaseConfig.databaseURL}/articles/${articleId}.json`,
+    })
+      .done(() =>
+      {
+        resolve();
+      })
+      .fail((error) =>
+      {
+        reject(error);
+      });
+  });
+};
+
+const editArticles = (updatedArticle, articleId) =>
+{
+  updatedArticle.userUid = firebaseAPI.getUID();
+  const firebaseConfig = firebaseAPI.getFirebaseConfig();
+  return new Promise((resolve, reject) =>
+  {
+    $.ajax({
+      method: 'PUT',
+      url: `${firebaseConfig.databaseURL}/messages/${articleId}.json`,
+      data: JSON.stringify(updatedArticle),
+    })
+      .done((modifiedArticle) =>
+      {
+        resolve(modifiedArticle);
+      })
+      .fail((error) =>
+      {
+        reject(error);
+      });
+  });
+};
+
 module.exports =
 {
   saveArticle,
   getAllArticles,
+  deleteArticle,
+  editArticles,
 };
