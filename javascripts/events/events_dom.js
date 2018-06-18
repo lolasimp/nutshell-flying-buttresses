@@ -7,7 +7,7 @@ const eventsAdded = (ThingsToDoArray) => {
   // strang += `<div><span>Upcoming Events<span></div>`;
   ThingsToDoArray.forEach((item) => {
     // if (index % 8 === 0) {
-    strang += `<div class="item">`;
+    strang += `<div class="item" data-firebase-id="${item.id}">`;
     // strang += `<div class="item">`;
     // strang += `<div class="item-date">`;
     strang += `<h4 class="item=start">${item.startDate}</h4>`;
@@ -19,7 +19,7 @@ const eventsAdded = (ThingsToDoArray) => {
     strang += `<h2 class="item-location">${item.location}</h2>`;
     // strang += `</div>`;
     // strang += `</div>`;
-    strang += `<div class="item-user ${item.userUid}"> `;
+    strang += `<div class="item-user"> `;
     // strang += `</div>`;
     // strang += `</div>`;
     strang += `<button type="button" class="btn btn-danger editBtn"><span>Edit</span></button>`;

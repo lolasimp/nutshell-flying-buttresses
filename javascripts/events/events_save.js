@@ -1,5 +1,4 @@
 const { getConfig, } = require('../auth/firebaseAPI');
-// const { apiKeys, } = require('../apiKeys');
 
 let firebaseConfig = {};
 
