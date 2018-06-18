@@ -22,7 +22,7 @@ const eventsAdded = (ThingsToDoArray) => {
     strang += `<div class="item-user"> `;
     // strang += `</div>`;
     // strang += `</div>`;
-    strang += `<button type="button" class="btn btn-danger editBtn"><span>Edit</span></button>`;
+    strang += `<button type="button" class="btn btn-danger editBtn data-toggle="modal" data-target="#edit-event-modal"><span>Edit</span></button>`;
     strang += `<button type="button" class="btn btn-danger deleteBtn"><span>Delete</span></button>`;
     strang += `</div>`;
     // }
