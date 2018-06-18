@@ -6,15 +6,6 @@ const firebaseApi = require('./firebaseApi');
 const addTaskBtn = () => {
   $('#add-task-btn').on('click', (e) => {
     e.preventDefault();
-    const ui = grabUserInput();
-    dom.newTaskToAdd(ui);
-    saveTasktoFbEvent();
-  });
-
-  $('#add-task-btn').keypress((e) => {
-    e.preventDefault();
-    const ui = grabUserInput();
-    dom.newTaskToAdd(ui);
     saveTasktoFbEvent();
   });
 };
@@ -31,7 +22,7 @@ const saveTasktoFbEvent = () => {
 
     firebaseApi.saveNewTask(taskToAdd)
       .then(() => {
-        console.log('Task saved!');
+        getAllTasks();
       })
       .catch((error) => {
         console.error(`I'm gonna give it to you straight, something went wrong when saving your task.`, error);
@@ -48,7 +39,7 @@ const grabUserInput = () => {
 const getAllTasks = () => {
   firebaseApi.viewSavedTasks()
     .then((tasksArray) => {
-      dom.newTaskToAdd(tasksArray);
+      dom.readTasks(tasksArray);
     })
     .catch((errr) => {
       console.error('Something fudged up while pulling data from Firebase', errr);

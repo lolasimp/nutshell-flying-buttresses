@@ -4,7 +4,7 @@ const saveNewTask = (newTask) => {
   return new Promise((resolve, reject) => {
     $.ajax({
       method: 'POST',
-      url: `https://nutshell-flying-buttresses.firebaseio.com/tasks`,
+      url: `https://nutshell-flying-buttresses.firebaseio.com/tasks.json`,
       data: JSON.stringify(newTask),
     })
       .then((newUniqueKey) => {

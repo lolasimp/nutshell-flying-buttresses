@@ -1,7 +1,7 @@
 // let newTask = '';
 
-// create panel for new task
-const newTaskToAdd = (taskArray) => {
+// read tasks from fb
+const readTasks = (taskArray) => {
   let domString = '';
   taskArray.forEach((task) => {
     domString += `<div class="panel panel-default">`;
@@ -20,5 +20,5 @@ const printToDom = (whereToPrint, task) => {
 };
 
 module.exports = {
-  newTaskToAdd,
+  readTasks,
 };
