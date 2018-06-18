@@ -1,5 +1,5 @@
-const printToDom = (id, string) => {
-  $(id).html(string);
+const printToDom = (id, strang) => {
+  $(id).html(strang);
 };
 
 const eventsAdded = (ThingsToDoArray) => {

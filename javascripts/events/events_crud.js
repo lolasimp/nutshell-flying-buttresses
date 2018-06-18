@@ -17,7 +17,7 @@ const getAllEvents = () => {
           });
         };
         resolve(getAllEventsArray);
-        console.log(getAllEventsArray);
+        // console.log(getAllEventsArray);
       })
       .fail((error) => {
         reject(error);

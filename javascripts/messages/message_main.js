@@ -9,6 +9,8 @@ const initMessageBoard = () => {
   messageEvents.getAllMessagesEvent();
   messageEvents.deleteMessageEvent();
   messageEvents.updateMessageEvent();
+  messageEvents.buttonBehavior();
+  messageEvents.getUsers();
 };
 
 module.exports = {

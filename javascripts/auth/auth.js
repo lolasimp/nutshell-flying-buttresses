@@ -19,9 +19,13 @@ const checkLoginStatus = () =>
       $('#friends-main-container').removeClass('hide');
       $('#authScreen').addClass('hide');
       $('#auth').addClass('hide');
+      $('#myFriends-container').removeClass('hide');
+      $('#suggestedFriends-container').removeClass('hide');
       // GET DATA FROM FIREBASE AND SET MESSAGE BOARD LISTENERS
       initMessageBoard();
       firebaseFriends.getFriendRequests();
+      firebaseFriends.friendsList();
+      firebaseFriends.suggestFriends();
       callAllEvents();
     } else {
       $('#mess, #tsk, #evnts, #artcls, #frnds, #logout').addClass('hide');
@@ -32,6 +36,10 @@ const checkLoginStatus = () =>
       $('#friends-main-container').addClass('hide');
       $('#authScreen').removeClass('hide');
       $('#friend-requests').html('');
+      $('#myFriends').html('');
+      $('#suggestedFriends').html('');
+      $('#myFriends-container').addClass('hide');
+      $('#suggestedFriends-container').addClass('hide');
     }
   });
 };

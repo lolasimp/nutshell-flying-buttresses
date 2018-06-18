@@ -3,12 +3,12 @@ const mGet = require('./message_get');
 const mDom = require('./message_dom');
 const mDelete = require('./message_delete');
 const mUpdate = require('./message_update');
-const mUser = require('./message_user');
+const mUsers = require('./message_user');
 
 // POST MESSAGE TO FIREBASE
 const addMessageEvent = () => {
   $('#submit-message').on('click', (e) => {
-    const timeStamp = moment().format();
+    const timeStamp = moment().format('LLL');
     const messageToAdd = $('#user-message-input').val();
     const messageToPost = {
       'message': `${messageToAdd}`,
@@ -27,11 +27,11 @@ const addMessageEvent = () => {
 };
 
 const getAllMessagesEvent = () => {
-  const user = mUser.getUID();
+  const user = mUsers.getUID();
   mGet.getAllMessages()
     .then((messagesArray) => {
-      mDom.messageBuilder(messagesArray, user);
-      $('#place-messages-here').scrollTop($('#place-messages-here')[0].scrollHeight);
+      getUsers(messagesArray, user);
+
     })
     .catch((error) => {
       console.error('error in get all messages', error);
@@ -86,9 +86,33 @@ const updateMessageBoard = () => {
   });
 };
 
+const getUsers = (messagesArray, user) => {
+  mUsers.getAllUsers()
+    .then((usersArray) => {
+      mDom.messageBuilder(messagesArray, user, usersArray);
+      $('#place-messages-here').scrollTop($('#place-messages-here')[0].scrollHeight);
+    })
+    .catch((error) => {
+      console.error('error in get all users', error);
+    });
+};
+
+const buttonBehavior = () => {
+  $(document).on('mouseenter', '.message', (e) => {
+    $(e.target).find('.btn-message-edit').removeClass('hide');
+    $(e.target).find('.btn-message-delete').removeClass('hide');
+  });
+  $(document).on('mouseleave', '.message', (e) => {
+    $(e.target).find('.btn-message-edit').addClass('hide');
+    $(e.target).find('.btn-message-delete').addClass('hide');
+  });
+};
+
 module.exports = {
   addMessageEvent,
   getAllMessagesEvent,
   deleteMessageEvent,
   updateMessageEvent,
+  buttonBehavior,
+  getUsers,
 };
