@@ -1,11 +1,11 @@
-const firebaseAPI = require('../auth/firebaseAPI');
-// const dom = require('./events_dom');
+const { getConfig, } = require('../auth/firebaseAPI');
+// const { apiKeys, } = require('../apiKeys');
+
+let firebaseConfig = {};
 
 const saveToPost = (newEvent) => {
-  const uid = firebaseAPI.getUID();
-  newEvent.uid = uid;
-  const firebaseConfig = firebaseAPI.getConfig();
   return new Promise((resolve, reject) => {
+    firebaseConfig = getConfig();
     $.ajax({
       method: 'POST',
       url: `${firebaseConfig.databaseURL}/events.json`,

@@ -1,10 +1,10 @@
-const whatHappensEvents = require('./events_events');
+// const whatHappensEvents = require('./events_events');
+const { callAllEvents, saveToFirebase, deleteEvent, } = require('./events_events');
 
 const initialierEvents = () => {
-  whatHappensEvents.callAllEvents();
-  whatHappensEvents.saveToFirebase();
-  // whatHappensEvents.closeModal();
-  whatHappensEvents.deleteEvent();
+  callAllEvents();
+  saveToFirebase();
+  deleteEvent();
 };
 
 module.exports = {

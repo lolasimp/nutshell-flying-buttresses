@@ -1,16 +1,18 @@
-const firebaseAPI = require('../auth/firebaseAPI');
+const {getConfig,} = require('../auth/firebaseAPI');
+// const {apiKeys,} = require('../auth/apiKeys');
 
-const updateEvent = (eventId, event) => {
-  event.uid = firebaseAPI.getUID();
-  const firebaseConfig = firebaseAPI.getConfig();
+let firebaseConfig = {};
+
+const updateEvent = (updateEvent, eventId) => {
   return new Promise((resolve, reject) => {
+    firebaseConfig = getConfig();
     $.ajax({
       method: 'PUT',
       url: `${firebaseConfig.databaseURL}/events/${eventId}.json`,
-      data: JSON.stringify(event),
+      data: JSON.stringify(updateEvent),
     })
-      .done((updatedEvent) => {
-        resolve(updatedEvent);
+      .done((updatedAfter) => {
+        resolve(updatedAfter);
       })
       .fail((error) => {
         reject(error);

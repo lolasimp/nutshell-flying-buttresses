@@ -1,8 +1,10 @@
-const firebaseAPI = require('../auth/firebaseAPI');
+const {getConfig,} = require('../auth/firebaseAPI');
+
+let firebaseConfig = {};
 
 const deleteEventsNow = (eventId) => {
   return new Promise((resolve, reject) => {
-    const firebaseConfig = firebaseAPI.getConfig();
+    firebaseConfig = getConfig();
     $.ajax({
       method: 'DELETE',
       url: `${firebaseConfig.databaseURL}/events/${eventId}.json`,
