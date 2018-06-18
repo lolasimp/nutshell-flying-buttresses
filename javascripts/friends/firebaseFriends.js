@@ -124,7 +124,7 @@ const suggestFriends = () => {
       let relationships = 0;
       if (user.uid !== myId) {
         friendsAndUsers2[0].forEach((friendObject) => {
-          if ((friendObject.userUid === myId && friendObject.userUid === user.uid) || (friendObject.friendUid === myId && friendObject.userUid === user.uid)) {
+          if ((friendObject.userUid === myId && friendObject.friendUid === user.uid) || (friendObject.friendUid === myId && friendObject.userUid === user.uid)) {
             relationships += 1;
           };
         });
