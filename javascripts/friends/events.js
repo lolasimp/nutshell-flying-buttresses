@@ -46,6 +46,7 @@ const addFriend = (e) => {
   firebaseFriends.createNewRelationship(newRelationship).catch((err) => {
     console.error('Creating a Relationship Failed: ', err);
   });
+  $(e.target).attr('disabled', true);
 };
 
 module.exports = {
