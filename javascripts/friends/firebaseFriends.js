@@ -77,15 +77,17 @@ const updateFriendRequest = (requestResponse) => {
 };
 
 const friendsList = () => {
-  Promise.all([getMyFriends(), getUsers(),]).then((friendsAndUsers) => {
+  Promise.all([getAllFriendObjects(), getUsers(),]).then((friendsAndUsers) => {
     const myFriends = [];
+    const myId = getUID();
     friendsAndUsers[0].forEach((friendObject) => {
       if (friendObject.isAccepted) {
         friendsAndUsers[1].forEach((user) => {
-          if (friendObject.userUid === user.uid) {
+          if ((friendObject.userUid === myId && friendObject.friendUid === user.uid) || (friendObject.friendUid === myId && friendObject.userUid === user.uid)) {
             const newFriend = {};
             newFriend.id = friendObject.id;
             newFriend.username = user.username;
+            newFriend.userUid = user.uid;
             myFriends.push(newFriend);
           }
         });
