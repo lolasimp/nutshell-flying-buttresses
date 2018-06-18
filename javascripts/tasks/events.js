@@ -11,7 +11,7 @@ const addTaskBtn = () => {
 };
 
 const saveTasktoFbEvent = () => {
-  $(document).on('click', '#add-task-btn', (e) => {
+  $(document).on('click', '#add-task-btn', () => {
     const newestTask = grabUserInput();
 
     const taskToAdd = {

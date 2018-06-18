@@ -1,8 +1,9 @@
-// const eventEvent = require('./events_crud');
+// const whatHappensEvents = require('./events_events');
+const { saveToFirebase, deleteEvent, } = require('./events_events');
 
 const initialierEvents = () => {
-  // eventEvent.callAllEvents();
-  // eventEvent.saveToSave();
+  saveToFirebase();
+  deleteEvent();
 };
 
 module.exports = {

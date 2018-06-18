@@ -1,22 +1,52 @@
-const eventFirebase = require('./events_crud');
+const {saveToPost, } = require('./events_save');
+const {getAllEvents, } = require('./events_crud');
+const {deleteEventsNow,} = require('./event_delete');
+const {eventsAdded,} = require('./events_dom');
 
-const saveToSave = () => {
-  $(document).on('click', '#save-event-btn', (e) => {
+const callAllEvents = () => {
+  getAllEvents()
+    .then((eventsArray) => {
+      eventsAdded(eventsArray);
+    })
+    .catch((error) => {
+      console.error('Failed To Load all events: ', error);
+    });
+};
+
+const saveToFirebase = () => {
+  $('#save-event-btn').click(() => {
+    $('#myEvent').modal('hide');
     const eventNameToAdd = $('#typed-event-name').val();
     const eventLocationToAdd = $('#typed-event-location').val();
     const eventDateToAdd = $('#typed-event-date').val();
     const eventPrintToPage = {
-      'startDate': `${eventNameToAdd}`,
-      'event': `${eventLocationToAdd}`,
-      'location': `${eventDateToAdd}`,
+      'event': `${eventNameToAdd}`,
+      'location': `${eventLocationToAdd}`,
+      'startDate': `${eventDateToAdd}`,
     };
-    eventFirebase.saveToSave(eventPrintToPage)
+    saveToPost(eventPrintToPage);
+    $('#typed-event-name').val('');
+    $('#typed-event-location').val('');
+    $('#typed-event-date').val('');
+    callAllEvents();
+  });
+};
+
+const deleteEvent = () => {
+  $(document).on('click', '.deleteBtn', (e) => {
+    const eventId = $(e.target).closest('.item').data('firebaseId');
+    deleteEventsNow(eventId)
+      .then(() => {
+        callAllEvents();
+      })
       .catch((error) => {
-        console.error('error not getting it', error);
+        console.error('Did Not Delete', error);
       });
   });
 };
 
 module.exports = {
-  saveToSave,
+  callAllEvents,
+  saveToFirebase,
+  deleteEvent,
 };

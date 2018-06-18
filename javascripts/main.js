@@ -8,5 +8,3 @@ const taskEvents = require('./tasks/events');
 taskEvents.initializer();
 api.retrieveKeys();
 init.initializer();
-// test.addRequestEvents();
-// lastEvents.initialierEvents();
