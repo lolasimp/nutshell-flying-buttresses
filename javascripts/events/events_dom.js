@@ -14,7 +14,7 @@ const eventsAdded = (ThingsToDoArray) => {
     strang +=     `<button class='btn btn-default btn-message-edit editBtn hide' data-toggle="modal" data-target=""><span class='glyphicon glyphicon-pencil ignore-click'></span></button>`;
     strang +=     `<button type="button" class='btn btn-default btn-message-delete deleteBtn hide'><span class='glyphicon glyphicon-trash ignore-click'></span></button>`;
     strang +=   `</div>`;
-    strand += `</div>`;
+    strang += `</div>`;
     // }
   });
   printToDom('#upcomingEvents', strang);
