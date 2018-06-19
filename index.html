@@ -24,7 +24,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Nutshell</a>
+        <a class="navbar-brand" href="#"><h1>Nutshell</h1></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,8 +37,6 @@
           <li><a href="#" id="artcls" class="hide">Articles</a></li>
           <li><a href="#" id="frnds" class="hide">Friends</a></li>
           <li><a href="#" id='logout' class='hide'>Log Out</a></li>
-        </ul>
-          </li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -95,11 +93,9 @@
   </div>
 
   <div id='suggestedFriends-container' class="row col-sm-10 col-sm-offset-1 col-md-4">
-      <h1>Suggested Friends</h1>
-      <div id='suggestedFriends' class="panel panel-info">
-
-
-      </div>
+    <h1>Suggested Friends</h1>
+    <div id='suggestedFriends' class="panel panel-info">
+    </div>
   </div>
 
   <div id="tasks-main-container" class="col-sm-10 col-sm-offset-1 col-md-4 row">
@@ -115,53 +111,54 @@
   </div>
 
   <div id="events-main-container" class="col-sm-10 col-sm-offset-1 col-md-4 row">
-      <div>
+    <div>
       <div>
         <h1>Events</h1>
         <div>
-      <button type="button" class="eventModalBtn btn-primary btn-lg" data-toggle="modal" data-target="#myEvent">
-          Click To Add Event
-        </button>
-    <div class="modal fade" id="myEvent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="event-modal-content">
-          <div class="modal-header">
-            <button type="button" class="close-event" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
-            <h4 class="event-modal-title">Enter Event Info Here</h4>
-          </div>
-          <div class="event-body">
-            <div class="event-input-group input-group-md">
-              <span class="input-group-addon" id="event-name">Event Name</span>
-              <input type="text" class="form-control" placeholder="Name of event" id="typed-event-name" aria-describedby="sizing-addon1">
+          <button type="button" class="eventModalBtn btn-primary btn-lg" data-toggle="modal" data-target="#myEvent">
+            Click To Add Event
+          </button>
+          <div class="modal fade" id="myEvent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+          <div class="event-modal-content">
+            <div class="modal-header">
+              <button type="button" class="close-event" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+              <h4 class="event-modal-title">Enter Event Info Here</h4>
             </div>
+            <div class="event-body">
+              <div class="event-input-group input-group-md">
+                <span class="input-group-addon" id="event-name">Event Name</span>
+                <input type="text" class="form-control" placeholder="Name of event" id="typed-event-name" aria-describedby="sizing-addon1">
+              </div>
 
-            <div class="event-input-group input-group-md">
-              <span class="input-group-addon" id="event-location">Location of Event</span>
-              <input type="text" class="form-control" placeholder="Where are you going?" id="typed-event-location"aria-describedby="sizing-addon3">
-            </div>
+              <div class="event-input-group input-group-md">
+                <span class="input-group-addon" id="event-location">Location of Event</span>
+                <input type="text" class="form-control" placeholder="Where are you going?" id="typed-event-location"aria-describedby="sizing-addon3">
+              </div>
 
-            <div class="event-input-group input-group-md">
+              <div class="event-input-group input-group-md">
                 <span class="input-group-addon" id="event-date">Event Date</span>
                 <input type="text" class="form-control" placeholder="MM/DD/YY" id="typed-event-date"aria-describedby="sizing-addon">
               </div>
+            </div>
+            <div class="event-modal-footer">
+              <button type="button" id="close-event-btn" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" id="save-event-btn"  class="btn btn-primary">Save changes</button>
+            </div>
           </div>
-
-          <div class="event-modal-footer">
-            <button type="button" id="close-event-btn" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" id="save-event-btn"  class="btn btn-primary">Save changes</button>
+            </div>
           </div>
         </div>
       </div>
+      <div id="upcomingEvents">
+      </div>
     </div>
-    </div>
-   </div>
-    <div id="upcomingEvents">
-    </div>
-  </div>
   </div>
 
-  <div id="articles-main-container" class="hide row">
-    <div id="articles" class="col-md-6 col-md-offset-2">
+
+
+  <div id="articles-main-container" class="hide col-sm-10 col-sm-offset-1 col-md-4 row">
+    <div id="articles" class="">
       <h1>Articles</h1>
       <div id='articleHolder'></div>
     </div>
@@ -222,9 +219,10 @@
               </div>
             </div>
           </div>
-        </div>
+      </div>
     </div>
-   </div>
+  </div>
+
   <div id="friends-main-container" class=" col-sm-10 col-sm-offset-1 col-md-4 row">
 
   </div>
