@@ -7,6 +7,10 @@ const readTasks = (taskArray) => {
     domString += `<div class="panel panel-default">`;
     domString +=   `<div class="panel-body">`;
     domString +=     `${task.task}`;
+    domString +=     `<div class="pull-right">`;
+    domString +=      `<a class="margin"><span class="glyphicon glyphicon-ok check-mark" aria-hidden="true"></span></a>`;
+    domString +=      `<a class="margin"><span class="glyphicon glyphicon-remove remove-mark" aria-hidden="true"></span></a>`;
+    domString +=     `</div>`;
     domString +=   `</div>`;
     domString += `</div>`;
   });
