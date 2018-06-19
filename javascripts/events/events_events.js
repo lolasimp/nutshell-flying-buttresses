@@ -48,12 +48,17 @@ const deleteEvent = () => {
 
 const modalEditEvent = () => {
   $(document).on('click', '.editBtn', (e) => {
+    console.error('why:', e);
     const eventToEdit = $(e.target).closest('.item');
     console.error(eventToEdit);
-    const eventLocationEdit = $(e.target).closest('.item-location').text();
+    const eventLocationEdit = $(e.target).find('.item-location').text();
+    console.error(eventLocationEdit);
     const eventIdEdit = $(e.target).closest('.item').data('firebaseId');
-    const eventNameEdit = $(e.target).closest('.item-event').text();
-    const eventDateEdit = $(e.target).closest('.item-start').text();
+    console.error(eventIdEdit);
+    const eventNameEdit = $(e.target).find('.item-event').text();
+    console.error(eventNameEdit);
+    const eventDateEdit = $(e.target).find('.item-start').text();
+    console.error(eventDateEdit);
     eventToEdit.attr('.id', 'whatWeChange');
     $('#edit-event-modal').data(eventIdEdit);
     $('#typed-event-name2').val(eventNameEdit);
