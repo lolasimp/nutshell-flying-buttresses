@@ -1,7 +1,7 @@
 /* MAIN BODY STYLING */
 
 body {
-  background-color: aliceblue;
+  background-color: #619B8D;
 }
 
 p {
@@ -20,18 +20,23 @@ button {
   font-family: 'Roboto Slab', serif;
 }
 
+.navbar {
+  height: 85px;
+}
+
+a > h1 {
+  font-size: 2.5em;
+}
+
  /* END MAIN BODY STYLING */
 
-#articles {
-  border: 1px solid red;
-}
 /* MESSAGE STYLING */
 #message-main-container, #tasks-main-container, #events-main-container, #articles-main-container, #friends-main-container {
-  background-color: oldlace;
+  background-color: #f1e462;
   margin: 5px;
 }
 
-#place-messages-here {
+#place-messages-here, #articleHolder, #upcomingEvents, #where-tasks-live {
   overflow-y: scroll;
   height: 400px;
   margin-top: 10px;
@@ -39,6 +44,7 @@ button {
   background-color: ghostwhite;
   border: 1px solid grey;
 }
+
 .row, .message {
   margin: 5px;
 }
@@ -47,8 +53,6 @@ button {
   padding-left: 10px;
 }
 /* END MESSAGE STYLING */
-
-
 
 /* FRIEND REQUEST STYLING */
 
