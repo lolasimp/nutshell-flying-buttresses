@@ -5,14 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<<<<<<< HEAD
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Krona+One|Poppins" rel="stylesheet">
-=======
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Krona+One|Poppins|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
->>>>>>> master
   <link rel="stylesheet" href="./styles/main.css">
   <link rel="shortcut icon" type="image/png" href="http://www.freepngimg.com/download/acorn/5-acorn-png-image-acorns.png" />
   <title>Flying Buttresses</title>
@@ -161,18 +155,18 @@
                 </div>
                 <div class="event-body">
                   <div class="event-input-group input-group-md">
-                    <span class="input-group-addon" id="event-name">Event Name</span>
+                      <span class="input-group-addon" id="event-date">Event Date</span>
+                      <input type="text" class="form-control" placeholder="MM/DD/YY" id="typed-event-date" aria-describedby="sizing-addon">
+                    </div>
+
+                  <div class="event-input-group input-group-md">
+                      <span class="input-group-addon" id="event-location">Location of Event</span>
+                      <input type="text" class="form-control" placeholder="Where are you going?" id="typed-event-location" aria-describedby="sizing-addon3">
+                    </div>
+
+                  <div class="event-input-group input-group-md">
+                    <span class="input-group-addon" id="event-name">Event Name and Description</span>
                     <input type="text" class="form-control" placeholder="Name of event" id="typed-event-name" aria-describedby="sizing-addon1">
-                  </div>
-
-                  <div class="event-input-group input-group-md">
-                    <span class="input-group-addon" id="event-location">Location of Event</span>
-                    <input type="text" class="form-control" placeholder="Where are you going?" id="typed-event-location" aria-describedby="sizing-addon3">
-                  </div>
-
-                  <div class="event-input-group input-group-md">
-                    <span class="input-group-addon" id="event-date">Event Date</span>
-                    <input type="text" class="form-control" placeholder="MM/DD/YY" id="typed-event-date" aria-describedby="sizing-addon">
                   </div>
                 </div>
 
@@ -195,13 +189,13 @@
               <button type="button" class="close-event" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">X</span>
               </button>
-              <h4 class="event-modal-title">Enter Event Info Here</h4>
+              <h4 class="event-modal-title">Edit Event</h4>
             </div>
             <div class="event-body">
-              <div class="event-input-group input-group-md">
-                <span class="input-group-addon" id="event-name">Event Name</span>
-                <input type="text" class="form-control" placeholder="Name of event" id="typed-event-name2" aria-describedby="sizing-addon1">
-              </div>
+                <div class="event-input-group input-group-md">
+                    <span class="input-group-addon" id="event-date">Event Date</span>
+                    <input type="text" class="form-control" placeholder="MM/DD/YY" id="typed-event-date2" aria-describedby="sizing-addon">
+                  </div>
 
               <div class="event-input-group input-group-md">
                 <span class="input-group-addon" id="event-location">Location of Event</span>
@@ -209,9 +203,9 @@
               </div>
 
               <div class="event-input-group input-group-md">
-                <span class="input-group-addon" id="event-date">Event Date</span>
-                <input type="text" class="form-control" placeholder="MM/DD/YY" id="typed-event-date2" aria-describedby="sizing-addon">
-              </div>
+                  <span class="input-group-addon" id="event-name">Event Name and Description</span>
+                  <input type="text" class="form-control" placeholder="Name and Description" id="typed-event-name2" aria-describedby="sizing-addon1">
+                </div>
             </div>
 
             <div class="event-modal-footer">

@@ -2,7 +2,7 @@ const { saveToPost, } = require('./events_save');
 const { getAllEvents, } = require('./events_crud');
 const { deleteEventsNow, } = require('./event_delete');
 const { eventsAdded, } = require('./events_dom');
-const {updateEvent,} = require('./event_update');
+const { updateEvent, } = require('./event_update');
 
 const callAllEvents = () => {
   getAllEvents()
@@ -48,35 +48,25 @@ const deleteEvent = () => {
 
 const modalEditEvent = () => {
   $(document).on('click', '.editBtn', (e) => {
-    console.error('why:', e);
+    const eventToEditId = $(e.target).closest('.item').data('firebaseId');
     const eventToEdit = $(e.target).closest('.item');
-    console.error(eventToEdit);
-    const eventLocationEdit = $(e.target).find('.item-location').text();
-    console.error(eventLocationEdit);
-    const eventIdEdit = $(e.target).closest('.item').data('firebaseId');
-    console.error(eventIdEdit);
-    const eventNameEdit = $(e.target).find('.item-event').text();
-    console.error(eventNameEdit);
-    const eventDateEdit = $(e.target).find('.item-start').text();
-    console.error(eventDateEdit);
-    eventToEdit.attr('.id', 'whatWeChange');
-    $('#edit-event-modal').data(eventIdEdit);
-    $('#typed-event-name2').val(eventNameEdit);
-    $('#typed-event-location2').val(eventLocationEdit);
-    $('#typed-event-date2').val(eventDateEdit);
-    updateEditedEvents();
+    const dateToEdit = eventToEdit.find('.childClass').text('.item-start');
+    const nameToEdit = eventToEdit.find('.childClass').text('.item-name');
+    const locationToEdit = eventToEdit.text('.item-location');
+    $('#typed-event-date2').val(dateToEdit);
+    $('#typed-event-name2').val(nameToEdit);
+    $('#typed-event-location2').val(locationToEdit);
+    updateEditedEvents(eventToEditId);
   });
 };
 
-const updateEditedEvents = () => {
-  let newEventName = '';
-  let newEventLocation = '';
-  let newStartDate = '';
-  $('#save-event-btn2').on('click', (e) => {
-    newStartDate = $('#typed-event-date2').val();
-    newEventName = $('#typed-event-name2').val();
-    newEventLocation = $('#typed-event-location2').val();
-    const editedEventId = $('whatWeChange').data('firebaseId');
+const updateEditedEvents = (editedEventId) => {
+  $('#save-event-btn2').on('click', () => {
+    $('#edit-event-modal').modal('hide');
+    const newStartDate = $('#typed-event-date2').val();
+    const newEventName = $('#typed-event-name2').val();
+    const newEventLocation = $('#typed-event-location2').val();
+    //     const editedEventId = $('whatWeChange').data('firebaseId');
     const newEvent =
       {
         event: `${newEventName}`,
@@ -90,6 +80,7 @@ const updateEditedEvents = () => {
       .catch((error) => {
         console.error(error);
       });
+    $('#typed-event-date2').val('');
   });
 };
 
