@@ -1,7 +1,8 @@
 /* MAIN BODY STYLING */
 
 body {
-  background-color: brown;
+  background-image: url("https://images.pexels.com/photos/819806/pexels-photo-819806.jpeg?cs=srgb&dl=ancient-architecture-birds-819806.jpg&fm=jpg");
+  background-size:cover;
 }
 
 p {
@@ -10,24 +11,57 @@ font-family: 'Poppins', sans-serif;
 
 h1 {
   font-family: 'Krona One', sans-serif;
+  color: ghostwhite;
 }
 
+h5 {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+button {
+  font-family: 'Roboto Slab', serif;
+}
+
+.navbar {
+  height: 85px;
+}
+
+a > h1 {
+  font-size: 2.5em;
+}
+#scroll {
+  position: relative;
+}
  /* END MAIN BODY STYLING */
 
-
 /* MESSAGE STYLING */
+#message-main-container, #tasks-main-container, #events-main-container, #articles-main-container, #friends-main-container, #contain-all-friends, #right-sidebar {
+  background-color: #706d72;
+  margin: 2px;
+}
 #message-main-container {
-  background-color: oldlace;
+  height: 1320px;
 }
 
-#place-messages-here {
+#articleHolder, #upcomingEvents, #where-tasks-live {
   overflow-y: scroll;
-  height: 400px;
+  height: 475px;
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: ghostwhite;
   border: 1px solid grey;
 }
+
+#place-messages-here {
+  max-height: 1200px;
+  overflow-y: scroll;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: ghostwhite;
+  border: 1px solid grey;
+  padding-bottom: 10px;
+}
+
 .row, .message {
   margin: 5px;
 }
@@ -36,8 +70,6 @@ h1 {
   padding-left: 10px;
 }
 /* END MESSAGE STYLING */
-
-
 
 /* FRIEND REQUEST STYLING */
 

@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Krona+One|Poppins" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Krona+One|Poppins|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
   <link rel="stylesheet" href="./styles/main.css">
-  <link rel="shortcut icon" type="image/png" href="http://www.freepngimg.com/download/acorn/5-acorn-png-image-acorns.png"/>
+  <link rel="shortcut icon" type="image/png" href="http://www.freepngimg.com/download/acorn/5-acorn-png-image-acorns.png" />
   <title>Flying Buttresses</title>
 </head>
+
 <body>
 
-<!-- <div id='print-tasks-here'><h1>Test</h1></div> -->
+  <!-- <div id='print-tasks-here'><h1>Test</h1></div> -->
 
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Nutshell</a>
+        <a class="navbar-brand" href="#"><h1>Nutshell</h1></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -38,8 +41,6 @@
           <li><a href="#" id="frnds" class="hide">Friends</a></li>
           <li><a href="#" id='logout' class='hide'>Log Out</a></li>
         </ul>
-          </li>
-        </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
@@ -49,158 +50,65 @@
 
   </div>
 
-  <!-- MESSAGE BOARD -->
-  <div id="message-main-container" class="col-sm-10 col-sm-offset-1 col-md-4 row hide">
-    <div>
-      <div>
-        <h1 id="module-head">Message Board</h1>
-        <div>
-          <div class="input-group col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
-            <input type="text" class="form-control" placeholder="Type Message Here..." id="user-message-input">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button" title="Print Message To Board" id="submit-message">Submit</button>
-            </span>
-          </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-      </div>
-      <div id="place-messages-here" class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
-        <!-- MESSAGES WILL BE WRITTEN HERE -->
-      </div>
-    </div>
-        <!--Edit Modal -->
-    <div class="modal fade" id="edit-message-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Edit message below</h4>
-          </div>
-          <div class="modal-body">
-            <textarea name="" id="message-to-update" cols="30" rows="3"></textarea>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="save-message" data-dismiss="modal">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id='myFriends-container' class="row col-sm-10 col-sm-offset-1 col-md-4">
+  <div class="col-sm-10 col-sm-offset-1 col-md-3 hide" id="contain-all-friends">
+  <div id='myFriends-container' >
     <h1>My Friends</h1>
     <div id='myFriends' class="panel panel-info">
 
     </div>
   </div>
 
-  <div id='suggestedFriends-container' class="row col-sm-10 col-sm-offset-1 col-md-4">
-      <h1>Suggested Friends</h1>
-      <div id='suggestedFriends' class="panel panel-info">
-
-
-      </div>
+  <div id='suggestedFriends-container' class="col-sm-10 col-sm-offset-1">
+    <h1>Suggested Friends</h1>
+    <div id='suggestedFriends' class="panel panel-info">
+    </div>
   </div>
 
-  <div id="tasks-main-container" class="col-sm-10 col-sm-offset-1 col-md-4 row">
-    <h1>My Tasks</h1>
-    <div id="where-tasks-live" class="tasks"></div>
-    <form class="form-inline">
-      <div class="form-group">
-        <label for="task-add">New Task:</label>
-        <input type="text" class="form-control" id="task-add" placeholder="Enter new task...">
+  <div id="articles-main-container" class="hide col-sm-10 col-sm-offset-1">
+      <div id="articles" class="">
+        <h1>Articles</h1>
+        <div id='articleHolder'></div>
       </div>
-      <button type="submit" id="add-task-btn" class="btn btn-default">Add Task</button>
-    </form>
-  </div>
-
-  <div id="events-main-container" class="col-sm-10 col-sm-offset-1 col-md-4 row">
-      <div>
-      <div>
-        <h1>Events</h1>
-        <div>
-      <button type="button" class="eventModalBtn btn-primary btn-lg" data-toggle="modal" data-target="#myEvent">
-          Click To Add Event
+      <div id="newArticleBtn" class="col-md-2">
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+          Save Article
         </button>
-    <div class="modal fade" id="myEvent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="event-modal-content">
-          <div class="modal-header">
-            <button type="button" class="close-event" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
-            <h4 class="event-modal-title">Enter Event Info Here</h4>
-          </div>
-          <div class="event-body">
-            <div class="event-input-group input-group-md">
-              <span class="input-group-addon" id="event-name">Event Name</span>
-              <input type="text" class="form-control" placeholder="Name of event" id="typed-event-name" aria-describedby="sizing-addon1">
-            </div>
-
-            <div class="event-input-group input-group-md">
-              <span class="input-group-addon" id="event-location">Location of Event</span>
-              <input type="text" class="form-control" placeholder="Where are you going?" id="typed-event-location"aria-describedby="sizing-addon3">
-            </div>
-
-            <div class="event-input-group input-group-md">
-                <span class="input-group-addon" id="event-date">Event Date</span>
-                <input type="text" class="form-control" placeholder="MM/DD/YY" id="typed-event-date"aria-describedby="sizing-addon">
-              </div>
-          </div>
-
-          <div class="event-modal-footer">
-            <button type="button" id="close-event-btn" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" id="save-event-btn"  class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-   </div>
-    <div id="upcomingEvents">
-    </div>
-  </div>
-  </div>
-
-  <div id="articles-main-container" class="hide row">
-    <div id="articles" class="col-md-6 col-md-offset-2">
-      <h1>Articles</h1>
-      <div id='articleHolder'></div>
-    </div>
-    <div id="newArticleBtn" class="col-md-2">
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Save Article
-      </button>
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body">
-              <div class="input-group input-group-lg">
-                <span class="input-group-addon" id="titleInput">Title</span>
-                <input type="text" class="form-control titleInput" placeholder="Article Title" aria-describedby="titleInput">
-              </div>
-              <div class="input-group input-group-lg">
-                <span class="input-group-addon" id="urlInput">URL</span>
-                <input type="text" class="form-control urlInput" placeholder="Article URL" aria-describedby="urlInput">
-              </div>
-              <div class="input-group input-group-lg">
-                <span class="input-group-addon" id="synopsisInput">Synopsis</span>
-                <textarea rows="3" type="text" class="form-control synopsisInput" placeholder="Article Synopsis" aria-describedby="synopsisInput"></textarea>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary articleToAddToList" data-dismiss="modal">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+              </div>
+              <div class="modal-body">
+                <div class="input-group input-group-lg">
+                  <span class="input-group-addon" id="titleInput">Title</span>
+                  <input type="text" class="form-control titleInput" placeholder="Article Title" aria-describedby="titleInput">
+                </div>
+                <div class="input-group input-group-lg">
+                  <span class="input-group-addon" id="urlInput">URL</span>
+                  <input type="text" class="form-control urlInput" placeholder="Article URL" aria-describedby="urlInput">
+                </div>
+                <div class="input-group input-group-lg">
+                  <span class="input-group-addon" id="synopsisInput">Synopsis</span>
+                  <textarea rows="3" type="text" class="form-control synopsisInput" placeholder="Article Synopsis" aria-describedby="synopsisInput"></textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary articleToAddToList" data-dismiss="modal">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="myModalLabel">Edited Article</h4>
               </div>
               <div class="modal-body">
@@ -223,51 +131,196 @@
             </div>
           </div>
         </div>
+      </div>
     </div>
-   </div>
-  <div id="friends-main-container" class=" col-sm-10 col-sm-offset-1 col-md-4 row">
+  </div>
+
+
+  <!-- MESSAGE BOARD -->
+  <div id="message-main-container" class="col-sm-10 col-sm-offset-1 col-md-5 hide">
+    <div>
+      <div>
+        <h1 id="module-head">Message Board</h1>
+        <div>
+          <div class="input-group col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+            <input type="text" class="form-control" placeholder="Type Message Here..." id="user-message-input">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" title="Print Message To Board" id="submit-message">Submit</button>
+            </span>
+          </div>
+          <!-- /input-group -->
+        </div>
+        <!-- /.col-lg-6 -->
+      </div>
+      <div id="place-messages-here" class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+        <!-- MESSAGES WILL BE WRITTEN HERE -->
+      </div>
+    </div>
+    <!--Edit Modal -->
+    <div class="modal fade" id="edit-message-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Edit message below</h4>
+          </div>
+          <div class="modal-body">
+            <textarea name="" id="message-to-update" cols="30" rows="3"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="save-message" data-dismiss="modal">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="col-sm-10 col-sm-offset-1 col-md-3 hide" id="right-sidebar">
+  <div id="tasks-main-container" class="col-sm-10 col-sm-offset-1">
+    <h1>My Tasks</h1>
+    <div id="where-tasks-live" class="tasks"></div>
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="task-add">New Task:</label>
+        <input type="text" class="form-control" id="task-add" placeholder="Enter new task...">
+      </div>
+      <button type="submit" id="add-task-btn" class="btn btn-default">Add Task</button>
+    </form>
+  </div>
+
+  <div id="events-main-container" class="col-sm-10 col-sm-offset-1">
+    <div>
+      <div>
+        <h1>Events</h1>
+        <div>
+          <button type="button" class="eventModalBtn btn-primary btn-lg" data-toggle="modal" data-target="#myEvent">
+            Click To Add Event
+          </button>
+          <div class="modal fade" id="myEvent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="event-modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close-event" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">X</span>
+                  </button>
+                  <h4 class="event-modal-title">Enter Event Info Here</h4>
+                </div>
+                <div class="event-body">
+                  <div class="event-input-group input-group-md">
+                      <span class="input-group-addon" id="event-date">Event Date</span>
+                      <input type="text" class="form-control" placeholder="MM/DD/YY" id="typed-event-date" aria-describedby="sizing-addon">
+                    </div>
+
+                  <div class="event-input-group input-group-md">
+                      <span class="input-group-addon" id="event-location">Location of Event</span>
+                      <input type="text" class="form-control" placeholder="Where are you going?" id="typed-event-location" aria-describedby="sizing-addon3">
+                    </div>
+
+                  <div class="event-input-group input-group-md">
+                    <span class="input-group-addon" id="event-name">Event Name and Description</span>
+                    <input type="text" class="form-control" placeholder="Name of event" id="typed-event-name" aria-describedby="sizing-addon1">
+                  </div>
+                </div>
+
+                <div class="event-modal-footer">
+                  <button type="button" id="close-event-btn" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" id="save-event-btn" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="upcomingEvents">
+      </div>
+      <!--EditModal-->
+      <div class="modal fade" id="edit-event-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="event-modal-content">
+            <div class="modal-header">
+              <button type="button" class="close-event" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">X</span>
+              </button>
+              <h4 class="event-modal-title">Edit Event</h4>
+            </div>
+            <div class="event-body">
+                <div class="event-input-group input-group-md">
+                    <span class="input-group-addon" id="event-date">Event Date</span>
+                    <input type="text" class="form-control" placeholder="MM/DD/YY" id="typed-event-date2" aria-describedby="sizing-addon">
+                  </div>
+
+              <div class="event-input-group input-group-md">
+                <span class="input-group-addon" id="event-location">Location of Event</span>
+                <input type="text" class="form-control" placeholder="Where are you going?" id="typed-event-location2" aria-describedby="sizing-addon3">
+              </div>
+
+              <div class="event-input-group input-group-md">
+                  <span class="input-group-addon" id="event-name">Event Name and Description</span>
+                  <input type="text" class="form-control" placeholder="Name and Description" id="typed-event-name2" aria-describedby="sizing-addon1">
+                </div>
+            </div>
+
+            <div class="event-modal-footer">
+              <button type="button" id="close-event-btn2" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" id="save-event-btn2" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <div id="friends-main-container" class=" col-sm-10 col-sm-offset-1 col-md-3">
 
   </div>
 
   <div id="authScreen">
     <div id="registration-form" class="hide">
-        <h1 class="text-center">Registration</h1>
-        <form class="form-horizontal col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
-          <div class="alert alert-danger hide" role="alert" id="registerErrorDiv">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span>
-            <span id='registerError'></span>
+      <h1 class="text-center">Registration</h1>
+      <form class="form-horizontal col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+        <div class="alert alert-danger hide" role="alert" id="registerErrorDiv">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+          <span id='registerError'></span>
+        </div>
+        <div class="form-group">
+          <label for="registerEmail" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="registerEmail" placeholder="Email">
           </div>
-          <div class="form-group">
-            <label for="registerEmail" class="col-sm-2 control-label">Email</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="registerEmail" placeholder="Email">
-            </div>
+        </div>
+        <div class="form-group">
+          <label for="registerEmail" class="col-sm-2 control-label">Username</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="registerUsername" placeholder="Username">
           </div>
-          <div class="form-group">
-            <label for="registerEmail" class="col-sm-2 control-label">Username</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="registerUsername" placeholder="Username">
-            </div>
+        </div>
+        <div class="form-group">
+          <label for="registerPassword" class="col-sm-2 control-label">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="registerPassword" placeholder="Password">
           </div>
-          <div class="form-group">
-            <label for="registerPassword" class="col-sm-2 control-label">Password</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" id="registerPassword" placeholder="Password">
-            </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <a href="#" id="signin-link">Go to Login</a>
           </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <a href="#" id="signin-link">Go to Login</a>
-            </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" id="register-btn" class="btn btn-default">Register</button>
           </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" id="register-btn" class="btn btn-default">Register</button>
-            </div>
-          </div>
-        </form>
-      </div>
+        </div>
+      </form>
+    </div>
     <div id="login-form">
       <h1 class="text-center">Sign In</h1>
       <form class="form-horizontal col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
@@ -304,12 +357,12 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
   <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
   <script src="./dist/app.js"></script>
 </body>
+
 </html>
