@@ -58,20 +58,50 @@ const deleteArticleEvent = () =>
   });
 };
 
-const editArticlesEvent = () =>
+const editArticleEvent = () =>
 {
   $(document).on('click','.editArticle', (e) =>
   {
     const articleToEdit = $(e.target).closest('.article');
     const articleToUpdateId = $(e.target).closest('.article').data('firebaseId');
     const title = articleToEdit.find('.titleText').text();
-    console.log(title);
     const url = articleToEdit.find('.urlText').text();
     const synopsis = articleToEdit.find('.synopsisText').text();
+    articleToEdit.attr('id', 'beingModified');
     $('#editModal').data(articleToUpdateId);
     $('.titleInput2').val(title);
     $('.urlInput2').val(url);
     $('.synopsisInput2').val(synopsis);
+    updateArticles();
+  });
+};
+
+const updateArticles = () =>
+{
+  let newTitle = '';
+  let newUrl = '';
+  let newSynopsis = '';
+  $('#editedArticleToAddToList').on('click', (e) =>
+  {
+    newTitle = $('.titleInput2').val();
+    newUrl = $('.urlInput2').val();
+    newSynopsis = $('.synopsisInput2').val();
+    const articleId = $('#beingModified').data('firebaseId');
+    const updatedArticle =
+    {
+      synopsis: `${newSynopsis}`,
+      title: `${newTitle}`,
+      url: `${newUrl}`,
+    };
+    firebaseAPI.editArticles(updatedArticle, articleId)
+      .then(() =>
+      {
+        getAllArticlesEvent();
+      })
+      .catch((err) =>
+      {
+        console.error(err);
+      });
   });
 };
 
@@ -79,7 +109,7 @@ const initializer = () =>
 {
   saveArticleEvent();
   deleteArticleEvent();
-  editArticlesEvent();
+  editArticleEvent();
 };
 
 module.exports =

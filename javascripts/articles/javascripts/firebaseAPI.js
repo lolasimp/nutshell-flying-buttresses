@@ -80,7 +80,7 @@ const editArticles = (updatedArticle, articleId) =>
   {
     $.ajax({
       method: 'PUT',
-      url: `${firebaseConfig.databaseURL}/messages/${articleId}.json`,
+      url: `${firebaseConfig.databaseURL}/articles/${articleId}.json`,
       data: JSON.stringify(updatedArticle),
     })
       .done((modifiedArticle) =>
