@@ -64,6 +64,10 @@ a > h1 {
   margin-left: 5%;
 }
 
+.add-friend {
+  margin-left: 5%;
+}
+
 /* modal placement */
 
 .event-modal-content {
@@ -94,3 +98,28 @@ a > h1 {
   padding: 20px 50px 20px 20px;
   overflow: auto;
 } */
+
+/* Tasks */
+
+.check-mark {
+  color: seagreen;
+}
+
+.check-mark:hover {
+  color: darkgreen;
+  cursor: pointer;
+}
+
+.remove-mark {
+  color: tomato;
+}
+
+.remove-mark:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.margin {
+  margin-left: 5px;
+  margin-right: 5px;
+}
