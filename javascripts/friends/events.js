@@ -5,7 +5,7 @@ const addRequestEvents = () => {
 };
 
 const requestResponse = (e) => {
-  console.log('Request Event Happened');
+  // console.log('Request Event Happened');
   const friendRequest = $(e.target).closest('.friend-request');
   if ($(e.target).hasClass('accept')) {
     const acceptedRequest = {

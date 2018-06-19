@@ -2,13 +2,17 @@
   "user1": {
     "username": "User 1",
     "uid": "kS7WlI1bPtbPvkbkD9EwEMNCKKG2"
-},
+  },
   "friend1": {
     "username": "Friend 1",
     "uid": "9ctH49g3ZwVCCzttc91rWeGpzLm1"
-},
+  },
   "user2": {
   "username": "User 2",
   "uid": "1ryRLcfum2VUg44T5rL0NhRyW3r1"
-}
+  },
+  "randomID": {
+    "username": "OnlySomewhat",
+    "uid": "pSRw9PdZQUXUX4i8WRJJvgrqAjo2"
+  }
 }
