@@ -158,10 +158,71 @@
   </div>
   </div>
 
-  <div id="articles-main-container" class="col-sm-10 col-sm-offset-1 col-md-4 hide row">
-    <p>poop</p>
-  </div>
-
+  <div id="articles-main-container" class="hide row">
+    <div id="articles" class="col-md-6 col-md-offset-2">
+      <h2>Articles</h2>
+      <div id='articleHolder'></div>
+    </div>
+    <div id="newArticleBtn" class="col-md-2">
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Save Article
+      </button>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+              <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="titleInput">Title</span>
+                <input type="text" class="form-control titleInput" placeholder="Article Title" aria-describedby="titleInput">
+              </div>
+              <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="urlInput">URL</span>
+                <input type="text" class="form-control urlInput" placeholder="Article URL" aria-describedby="urlInput">
+              </div>
+              <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="synopsisInput">Synopsis</span>
+                <textarea rows="3" type="text" class="form-control synopsisInput" placeholder="Article Synopsis" aria-describedby="synopsisInput"></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary articleToAddToList" data-dismiss="modal">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Edited Article</h4>
+              </div>
+              <div class="modal-body">
+                <div class="input-group input-group-lg">
+                  <span class="input-group-addon" id="titleInput2">Title</span>
+                  <input type="text" class="form-control titleInput2" placeholder="Article Title" aria-describedby="titleInput">
+                </div>
+                <div class="input-group input-group-lg">
+                  <span class="input-group-addon" id="urlInput2">URL</span>
+                  <input type="text" class="form-control urlInput2" placeholder="Article URL" aria-describedby="urlInput">
+                </div>
+                <div class="input-group input-group-lg">
+                  <span class="input-group-addon" id="synopsisInput2">Synopsis</span>
+                  <textarea rows="3" type="text" class="form-control synopsisInput2" placeholder="Article Synopsis" aria-describedby="synopsisInput"></textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" id="editedArticleToAddToList" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+   </div>
   <div id="friends-main-container" class=" col-sm-10 col-sm-offset-1 col-md-4 row">
     <p>poop</p>
   </div>
@@ -238,6 +299,7 @@
       </form>
     </div>
   </div>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script
