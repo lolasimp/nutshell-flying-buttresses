@@ -2,7 +2,7 @@ const firebaseAPI = require('../auth/firebaseAPI');
 
 const getAllUsers = () => {
   return new Promise((resolve, reject) => {
-    const firebaseConfig = firebaseAPI.getConfig();
+    const firebaseConfig = firebaseAPI.getFirebaseConfig();
     const allUsersArray = [];
     $.ajax({
       method: 'GET',
