@@ -2,6 +2,7 @@ const {saveToPost, } = require('./events_save');
 const {getAllEvents, } = require('./events_crud');
 const {deleteEventsNow,} = require('./event_delete');
 const {eventsAdded,} = require('./events_dom');
+// const {updateEvent,} = require('./event_update');
 
 const callAllEvents = () => {
   getAllEvents()
@@ -45,8 +46,38 @@ const deleteEvent = () => {
   });
 };
 
+// const modalEditEvent = () => {
+//   $(document).on('click', '.editBtn', (e) => {
+//     const theEvent = $(e.target).closest('.item-location').data('event');
+//     theEvent.attr()
+//     const EventToEdit =theEvent.find()
+
+//   });
+// };
+
+// const saveEditedEvent = () => {
+//   $('#save-event-btn').click(() => {
+//     $('#myEvent').modal('hide');
+//     const eventNameToAdd = $('#typed-event-name').val();
+//     const eventLocationToAdd = $('#typed-event-location').val();
+//     const eventDateToAdd = $('#typed-event-date').val();
+//     const eventPrintToPage = {
+//       'event': `${eventNameToAdd}`,
+//       'location': `${eventLocationToAdd}`,
+//       'startDate': `${eventDateToAdd}`,
+//     };
+//     saveToPost(eventPrintToPage);
+//     $('#typed-event-name').val('');
+//     $('#typed-event-location').val('');
+//     $('#typed-event-date').val('');
+//     callAllEvents();
+//   });
+// };
+
 module.exports = {
   callAllEvents,
   saveToFirebase,
   deleteEvent,
+  // modalEditEvent,
+  // saveEditedEvent,
 };
