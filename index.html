@@ -6,9 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="./styles/main.css">
-  <title>Nutshell-Flying-Buttresses</title>
+  <link rel="shortcut icon" type="image/png" href="http://www.freepngimg.com/download/acorn/5-acorn-png-image-acorns.png"/>
+  <title>Flying Buttresses</title>
 </head>
 <body>
+
+<!-- <div id='print-tasks-here'><h1>Test</h1></div> -->
 
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -20,7 +23,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">In a Nutshell</a>
+        <a class="navbar-brand" href="#">Nutshell</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -28,7 +31,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#" id="auth">Authentication</a></li>
           <li><a href="#" id="mess" class="hide">Messages</a></li>
-          <li><a href="#tasks-main-container" id="tsk" class="hide">Tasks</a></li>
+          <li><a href="#tasks-main-container" id="tsk">Tasks</a></li>
           <li><a href="#" id="evnts" class="hide">Events</a></li>
           <li><a href="#" id="artcls" class="hide">Articles</a></li>
           <li><a href="#" id="frnds" class="hide">Friends</a></li>
@@ -41,7 +44,7 @@
   </nav>
 
 
-  <div id="friend-requests" class="row col-sm-12">
+  <div id="friend-requests" class="hide row col-sm-12">
 
   </div>
 
@@ -96,7 +99,7 @@
       </div>
     </div>
 
-  <div id="tasks-main-container" class=" .col-md-4 row">
+  <div id="tasks-main-container" class="col-md-4 row">
     <h3>My Tasks</h3>
     <div id="where-tasks-live" class="tasks"></div>
     <form class="form-inline">
