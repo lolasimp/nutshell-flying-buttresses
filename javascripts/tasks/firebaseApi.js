@@ -53,8 +53,25 @@ const updateTask = (modifiedTask, taskId) => {
   });
 };
 
+// DELETE
+const deleteTask = (taskId) => {
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      method: 'DELETE',
+      url: `https://nutshell-flying-buttresses.firebaseio.com/tasks/${taskId}.json`,
+    })
+      .then((theVoid) => {
+        resolve(theVoid);
+      })
+      .catch((oops) => {
+        reject(oops);
+      });
+  });
+};
+
 module.exports = {
   saveNewTask,
   viewSavedTasks,
   updateTask,
+  deleteTask,
 };

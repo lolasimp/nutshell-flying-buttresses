@@ -92,6 +92,7 @@ h1 {
 
 .check-mark:hover {
   color: darkgreen;
+  cursor: pointer;
 }
 
 .remove-mark {
@@ -100,6 +101,7 @@ h1 {
 
 .remove-mark:hover {
   color: red;
+  cursor: pointer;
 }
 
 .margin {
