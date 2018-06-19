@@ -1,4 +1,4 @@
-
+const articleInit = require('./articles/javascripts/main');
 const init = require('./auth/events');
 const api = require('./auth/apiKeys');
 const taskEvents = require('./tasks/events');
@@ -8,3 +8,4 @@ const taskEvents = require('./tasks/events');
 taskEvents.initializer();
 api.retrieveKeys();
 init.initializer();
+articleInit;

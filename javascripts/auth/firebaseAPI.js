@@ -6,10 +6,6 @@ const setConfig = (fbConfig) =>
   fireBaseConfig = fbConfig;
 };
 
-const getConfig = () => {
-  return fireBaseConfig;
-};
-
 const getFirebaseConfig = () => {
   return fireBaseConfig;
 };
@@ -22,11 +18,15 @@ const getUID = () => {
   return uid;
 };
 
+const getConfig = () => {
+  return fireBaseConfig;
+};
+
 module.exports =
 {
   setConfig,
-  getConfig,
   setUID,
   getFirebaseConfig,
   getUID,
+  getConfig,
 };

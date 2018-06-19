@@ -3,7 +3,7 @@ const firebaseAPI = require('../auth/firebaseAPI');
 const saveMessage = (newMessage) => {
   const uid = firebaseAPI.getUID();
   newMessage.uid = uid;
-  const firebaseConfig = firebaseAPI.getConfig();
+  const firebaseConfig = firebaseAPI.getFirebaseConfig();
   return new Promise((resolve, reject) => {
     $.ajax({
       method: 'POST',

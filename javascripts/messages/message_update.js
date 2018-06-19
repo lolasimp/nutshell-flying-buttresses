@@ -2,7 +2,7 @@ const firebaseAPI = require('../auth/firebaseAPI');
 
 const updateFirebaseMessages = (messageId, message) => {
   message.uid = firebaseAPI.getUID();
-  const firebaseConfig = firebaseAPI.getConfig();
+  const firebaseConfig = firebaseAPI.getFirebaseConfig();
   return new Promise((resolve, reject) => {
     $.ajax({
       method: 'PUT',

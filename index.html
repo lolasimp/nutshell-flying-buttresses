@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Krona+One|Poppins" rel="stylesheet">
   <link rel="stylesheet" href="./styles/main.css">
   <link rel="shortcut icon" type="image/png" href="http://www.freepngimg.com/download/acorn/5-acorn-png-image-acorns.png"/>
   <title>Flying Buttresses</title>
@@ -49,7 +50,7 @@
   </div>
 
   <!-- MESSAGE BOARD -->
-  <div id="message-main-container" class=" row hide">
+  <div id="message-main-container" class="col-sm-10 col-sm-offset-1 col-md-4 row hide">
     <div>
       <div>
         <h1 id="module-head">Message Board</h1>
@@ -86,21 +87,23 @@
     </div>
   </div>
 
-  <div id='myFriends-container' class="row col-sm-2">
+  <div id='myFriends-container' class="row col-sm-10 col-sm-offset-1 col-md-4">
+    <h1>My Friends</h1>
     <div id='myFriends' class="panel panel-info">
 
     </div>
   </div>
 
-  <div id='suggestedFriends-container' class="row col-sm-2">
+  <div id='suggestedFriends-container' class="row col-sm-10 col-sm-offset-1 col-md-4">
+      <h1>Suggested Friends</h1>
       <div id='suggestedFriends' class="panel panel-info">
 
 
       </div>
     </div>
 
-  <div id="tasks-main-container" class="col-md-4 row">
-    <h3>My Tasks</h3>
+  <div id="tasks-main-container" class="col-sm-10 col-sm-offset-1 col-md-4 row">
+    <h1>My Tasks</h1>
     <div id="where-tasks-live" class="tasks"></div>
     <form class="form-inline">
       <div class="form-group">
@@ -111,7 +114,7 @@
     </form>
   </div>
 
-  <div id="events-main-container" class="row">
+  <div id="events-main-container" class="col-sm-10 col-sm-offset-1 col-md-4 row">
       <div>
       <div>
         <h1>Events</h1>
@@ -158,11 +161,72 @@
   </div>
 
   <div id="articles-main-container" class="hide row">
-    <p>poop</p>
-  </div>
+    <div id="articles" class="col-md-6 col-md-offset-2">
+      <h1>Articles</h1>
+      <div id='articleHolder'></div>
+    </div>
+    <div id="newArticleBtn" class="col-md-2">
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Save Article
+      </button>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+              <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="titleInput">Title</span>
+                <input type="text" class="form-control titleInput" placeholder="Article Title" aria-describedby="titleInput">
+              </div>
+              <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="urlInput">URL</span>
+                <input type="text" class="form-control urlInput" placeholder="Article URL" aria-describedby="urlInput">
+              </div>
+              <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="synopsisInput">Synopsis</span>
+                <textarea rows="3" type="text" class="form-control synopsisInput" placeholder="Article Synopsis" aria-describedby="synopsisInput"></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary articleToAddToList" data-dismiss="modal">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Edited Article</h4>
+              </div>
+              <div class="modal-body">
+                <div class="input-group input-group-lg">
+                  <span class="input-group-addon" id="titleInput2">Title</span>
+                  <input type="text" class="form-control titleInput2" placeholder="Article Title" aria-describedby="titleInput">
+                </div>
+                <div class="input-group input-group-lg">
+                  <span class="input-group-addon" id="urlInput2">URL</span>
+                  <input type="text" class="form-control urlInput2" placeholder="Article URL" aria-describedby="urlInput">
+                </div>
+                <div class="input-group input-group-lg">
+                  <span class="input-group-addon" id="synopsisInput2">Synopsis</span>
+                  <textarea rows="3" type="text" class="form-control synopsisInput2" placeholder="Article Synopsis" aria-describedby="synopsisInput"></textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" id="editedArticleToAddToList" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+   </div>
+  <div id="friends-main-container" class=" col-sm-10 col-sm-offset-1 col-md-4 row">
 
-  <div id="friends-main-container" class="row">
-    <p>poop</p>
   </div>
 
   <div id="authScreen">
@@ -237,6 +301,7 @@
       </form>
     </div>
   </div>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script
