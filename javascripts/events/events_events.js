@@ -21,9 +21,9 @@ const saveToFirebase = () => {
     const eventLocationToAdd = $('#typed-event-location').val();
     const eventDateToAdd = $('#typed-event-date').val();
     const eventPrintToPage = {
-      'event': `${eventNameToAdd}`,
-      'location': `${eventLocationToAdd}`,
-      'startDate': `${eventDateToAdd}`,
+      event: eventNameToAdd,
+      location: eventLocationToAdd,
+      startDate: eventDateToAdd,
     };
     saveToPost(eventPrintToPage);
     $('#typed-event-name').val('');
@@ -50,9 +50,9 @@ const modalEditEvent = () => {
   $(document).on('click', '.editBtn', (e) => {
     const eventToEditId = $(e.target).closest('.item').data('firebaseId');
     const eventToEdit = $(e.target).closest('.item');
-    const dateToEdit = eventToEdit.find('.childClass').text('.item-start');
-    const nameToEdit = eventToEdit.find('.childClass').text('.item-name');
-    const locationToEdit = eventToEdit.text('.item-location');
+    const dateToEdit = eventToEdit.find('.item-start').text();
+    const nameToEdit = eventToEdit.find('.item-event').text();
+    const locationToEdit = eventToEdit.find('.item-location').text();
     $('#typed-event-date2').val(dateToEdit);
     $('#typed-event-name2').val(nameToEdit);
     $('#typed-event-location2').val(locationToEdit);
@@ -62,11 +62,11 @@ const modalEditEvent = () => {
 
 const updateEditedEvents = (editedEventId) => {
   $('#save-event-btn2').on('click', () => {
-    $('#edit-event-modal').modal('hide');
+
     const newStartDate = $('#typed-event-date2').val();
     const newEventName = $('#typed-event-name2').val();
     const newEventLocation = $('#typed-event-location2').val();
-    //     const editedEventId = $('whatWeChange').data('firebaseId');
+    $('#edit-event-modal').modal('hide');
     const newEvent =
       {
         event: `${newEventName}`,
