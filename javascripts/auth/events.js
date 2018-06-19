@@ -1,3 +1,5 @@
+const register = require('./firebaseRegister.js');
+
 const authEvents = () =>
 {
   $('#signin-btn').click((e) =>
@@ -19,7 +21,15 @@ const authEvents = () =>
   {
     const email = $('#registerEmail').val();
     const pass = $('#registerPassword').val();
-    firebase.auth().createUserWithEmailAndPassword(email, pass).catch((error) => {
+    firebase.auth().createUserWithEmailAndPassword(email, pass).then(function (user) {
+      console.log('Data from firebase after registering: ', user);
+      const addUser = {
+        uid: user.user.uid,
+        username: $('#registerUsername').val(),
+      };
+      register.createUser(addUser);
+      $('#registerEmail, #registerUsername, #registerPassword').html('');
+    }).catch((error) => {
       $('#registerError').text(error.message);
       $('#registerErrorDiv').removeClass('hide');
       console.error(error.message);
@@ -39,12 +49,12 @@ const authEvents = () =>
   {
     firebase.auth().signOut().then(function () {
       $('#auth').removeClass('hide');
-      $('#authScreen').removeClass('hide');
+      $('#authScreen, #login-form').removeClass('hide');
       $('#message-main-container').addClass('hide');
       $('#tasks-main-container').addClass('hide');
       $('#events-main-container').addClass('hide');
       $('#articles-main-container').addClass('hide');
-      $('#friends-main-container').addClass('hide');
+      $('#friends-main-container, #registration-form').addClass('hide');
       $('#mess, #tsk, #evnts, #artcls, #frnds, #logout').addClass('hide');
     }).catch(function (error) {
       console.error(error);

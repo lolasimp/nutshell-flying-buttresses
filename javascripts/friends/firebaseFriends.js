@@ -77,21 +77,23 @@ const updateFriendRequest = (requestResponse) => {
 };
 
 const friendsList = () => {
-  Promise.all([getMyFriends(), getUsers(),]).then((friendsAndUsers) => {
+  Promise.all([getAllFriendObjects(), getUsers(),]).then((friendsAndUsers) => {
     const myFriends = [];
+    const myId = getUID();
     friendsAndUsers[0].forEach((friendObject) => {
       if (friendObject.isAccepted) {
         friendsAndUsers[1].forEach((user) => {
-          if (friendObject.userUid === user.uid) {
+          if ((friendObject.userUid === myId && friendObject.friendUid === user.uid) || (friendObject.friendUid === myId && friendObject.userUid === user.uid)) {
             const newFriend = {};
             newFriend.id = friendObject.id;
             newFriend.username = user.username;
+            newFriend.userUid = user.uid;
             myFriends.push(newFriend);
           }
         });
       }
     });
-    toDom.printMyFriends(myFriends);
+    toDom.printMyFriends(myFriends, myId);
   }).catch((err) => {
     console.error('Friends list failed to load: ', err);
   });
@@ -124,7 +126,7 @@ const suggestFriends = () => {
       let relationships = 0;
       if (user.uid !== myId) {
         friendsAndUsers2[0].forEach((friendObject) => {
-          if ((friendObject.userUid === myId && friendObject.userUid === user.uid) || (friendObject.friendUid === myId && friendObject.userUid === user.uid)) {
+          if ((friendObject.userUid === myId && friendObject.friendUid === user.uid) || (friendObject.friendUid === myId && friendObject.userUid === user.uid)) {
             relationships += 1;
           };
         });
@@ -139,9 +141,41 @@ const suggestFriends = () => {
   });
 };
 
+const createNewRelationship = (newRelationship) => {
+  return new Promise ((resolve, reject) => {
+    const config = getFirebaseConfig();
+    $.ajax({
+      method: `POST`,
+      url: `${config.databaseURL}/friends.json`,
+      data: JSON.stringify(newRelationship),
+    }).done((data) => {
+      resolve(data);
+    }).fail((err) => {
+      reject(err);
+    });
+  });
+};
+
+const deFriend = (unFriendObject, relationshipID) => {
+  return new Promise ((resolve, reject) => {
+    const config = getFirebaseConfig();
+    $.ajax({
+      method: `PUT`,
+      url: `${config.databaseURL}/friends/${relationshipID}.json`,
+      data: JSON.stringify(unFriendObject),
+    }).done((data) => {
+      resolve(data);
+    }).fail((err) => {
+      reject(err);
+    });
+  });
+};
+
 module.exports = {
   updateFriendRequest,
   getFriendRequests,
   friendsList,
   suggestFriends,
+  createNewRelationship,
+  deFriend,
 };

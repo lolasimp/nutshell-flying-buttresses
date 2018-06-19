@@ -17,7 +17,7 @@ const checkLoginStatus = () =>
       $('#tasks-main-container').removeClass('hide');
       $('#events-main-container').removeClass('hide');
       $('#articles-main-container').removeClass('hide');
-      $('#friends-main-container').removeClass('hide');
+      $('#friends-main-container, #friend-requests').removeClass('hide');
       $('#authScreen').addClass('hide');
       $('#auth').addClass('hide');
       $('#myFriends-container').removeClass('hide');
@@ -35,7 +35,7 @@ const checkLoginStatus = () =>
       $('#tasks-main-container').addClass('hide');
       $('#events-main-container').addClass('hide');
       $('#articles-main-container').addClass('hide');
-      $('#friends-main-container').addClass('hide');
+      $('#friends-main-container, #friend-requests').addClass('hide');
       $('#authScreen').removeClass('hide');
       $('#login-form').removeClass('hide');
       $('#friend-requests').html('');
