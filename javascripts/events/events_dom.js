@@ -16,7 +16,7 @@ const eventsAdded = (ThingsToDoArray) => {
     // strang += `<div class="item-name">`;
     strang += `<h3 class="item-event">${item.event}</h3>`;
     // strang += `<div>`;
-    strang += `<h2 class="item-location">${item.location}</h2>`;
+    strang += `<h5 class="item-location">${item.location}</h5>`;
     // strang += `</div>`;
     // strang += `</div>`;
     strang += `<div class="item-user"> `;
