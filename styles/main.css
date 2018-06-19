@@ -1,7 +1,7 @@
 /* MAIN BODY STYLING */
 
 body {
-  background-color: brown;
+  background-color: aliceblue;
 }
 
 p {
@@ -22,10 +22,13 @@ button {
 
  /* END MAIN BODY STYLING */
 
-
+#articles {
+  border: 1px solid red;
+}
 /* MESSAGE STYLING */
-#message-main-container {
+#message-main-container, #tasks-main-container, #events-main-container, #articles-main-container, #friends-main-container {
   background-color: oldlace;
+  margin: 5px;
 }
 
 #place-messages-here {
