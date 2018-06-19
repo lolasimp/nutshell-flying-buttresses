@@ -25,15 +25,11 @@ const getAllEvents = () => {
   });
 };
 
-// const callAllEvents = () => {
-//   getAllEvents().then((eventsArray) => {
-//     dom.eventsAdded(eventsArray);
-//   }).catch((err) => {
-//     console.error('Failed To Load all events: ', err);
-//   });
-// };
+const getUID = () => {
+  return firebaseAPI.getUID();
+};
 
 module.exports = {
-  // callAllEvents,
+  getUID,
   getAllEvents,
 };
