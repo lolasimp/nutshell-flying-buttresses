@@ -1,7 +1,7 @@
 const {setUID,} = require('./firebaseAPI');
 const {initMessageBoard,} = require('../messages/message_main');
 const firebaseFriends = require('../friends/firebaseFriends.js');
-const allArticles = require('../articles/javascripts/events');
+// const allArticles = require('../articles/javascripts/events');
 const {initialierEvents,} = require('../events/events_main');
 const {callAllEvents,} = require('../events/events_events');
 
@@ -25,9 +25,10 @@ const checkLoginStatus = () =>
       // GET DATA FROM FIREBASE AND SET MESSAGE BOARD LISTENERS
       initMessageBoard();
       firebaseFriends.getFriendRequests();
-      allArticles.getAllArticlesEvent();
+      // allArticles.getAllArticlesEvent();
       firebaseFriends.friendsList();
       firebaseFriends.suggestFriends();
+      firebaseFriends.getFriendArticles();
       callAllEvents();
     } else {
       $('#mess, #tsk, #evnts, #artcls, #frnds, #logout').addClass('hide');
