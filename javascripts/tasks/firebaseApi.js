@@ -36,7 +36,25 @@ const viewSavedTasks = () => {
   });
 };
 
+// UPDATE
+const updateTask = (modifiedTask, taskId) => {
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      method: 'PUT',
+      url: `https://nutshell-flying-buttresses.firebaseio.com/tasks/${taskId}.json`,
+      data: JSON.stringify(modifiedTask),
+    })
+      .then((updatedTaskFromFirebase) => {
+        resolve(updatedTaskFromFirebase);
+      })
+      .catch((errrrr) => {
+        reject(errrrr);
+      });
+  });
+};
+
 module.exports = {
   saveNewTask,
   viewSavedTasks,
+  updateTask,
 };
