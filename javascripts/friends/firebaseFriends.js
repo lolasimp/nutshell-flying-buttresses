@@ -171,6 +171,78 @@ const deFriend = (unFriendObject, relationshipID) => {
   });
 };
 
+const getAllArticles = () => {
+  return new Promise ((resolve, reject) => {
+    const config = getFirebaseConfig();
+    const allArticles = [];
+    $.ajax({
+      method: `GET`,
+      url: `${config.databaseURL}/articles.json`,
+    }).done((data) => {
+      if (data !== null) {
+        Object.keys(data).forEach((key) => {
+          data[key].id = key;
+          allArticles.push(data[key]);
+        });
+      };
+      resolve(allArticles);
+    }).fail((err) => {
+      reject(err);
+    });
+  });
+};
+
+const getMyArticles = () => {
+  return new Promise ((resolve, reject) => {
+    const config = getFirebaseConfig();
+    const uid = getUID();
+    const articlesArray = [];
+    $.ajax({
+      method: `GET`,
+      url: `${config.databaseURL}/articles.json?orderBy="userUid"&equalTo="${uid}"`,
+    }).done((data) => {
+      if (data !== null) {
+        Object.keys(data).forEach((key) => {
+          data[key].id = key;
+          articlesArray.push(data[key]);
+        });
+      }
+      resolve(articlesArray);
+    }).fail((err) => {
+      reject(err);
+    });
+  });
+};
+
+const getFriendArticles = () => {
+  Promise.all([getAllFriendObjects(), getAllArticles(), getMyArticles(),]).then((allRelationshipsAndArticles) => {
+    const myId = getUID();
+    const myRelationships = [];
+    const friendsArticles = [];
+    const myArticles = allRelationshipsAndArticles[2];
+    allRelationshipsAndArticles[0].forEach((relationship) => {
+      if (relationship.isAccepted) {
+        if (relationship.userUid === myId || relationship.friendUid === myId) {
+          myRelationships.push(relationship);
+        }
+      }
+    });
+
+    allRelationshipsAndArticles[1].forEach((article) => {
+      if (article.userUid !== myId) {
+        myRelationships.forEach((relationshipz) => {
+          if ((article.userUid === relationshipz.userUid) || (article.userUid === relationshipz.friend)) {
+            friendsArticles.push(article);
+          }
+        });
+      }
+    });
+    toDom.printArticles(friendsArticles, myArticles);
+  }).catch((err) => {
+    console.error('Failed to get friends articles: ', err);
+  });
+};
+
 module.exports = {
   updateFriendRequest,
   getFriendRequests,
@@ -178,4 +250,5 @@ module.exports = {
   suggestFriends,
   createNewRelationship,
   deFriend,
+  getFriendArticles,
 };
