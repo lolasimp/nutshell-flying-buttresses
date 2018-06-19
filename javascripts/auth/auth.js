@@ -37,6 +37,7 @@ const checkLoginStatus = () =>
       $('#articles-main-container').addClass('hide');
       $('#friends-main-container').addClass('hide');
       $('#authScreen').removeClass('hide');
+      $('#login-form').removeClass('hide');
       $('#friend-requests').html('');
       $('#myFriends').html('');
       $('#suggestedFriends').html('');
@@ -47,6 +48,11 @@ const checkLoginStatus = () =>
 };
 
 module.exports =
-{
-  checkLoginStatus,
-};
+  {
+    checkLoginStatus,
+  };
+
+module.exports =
+  {
+    checkLoginStatus,
+  };
