@@ -49,7 +49,26 @@ const addFriend = (e) => {
   $(e.target).attr('disabled', true);
 };
 
+// UN-friend people
+
+const addUnFriendEvent = () => {
+  $('body').on('click', '.de-friend', unFriend);
+};
+
+const unFriend = (e) => {
+  const unFriendObject = {
+    userUid: $(e.target).data('friendId'),
+    friendUid: $(e.target).data('myid'),
+    isAccepted: false,
+    isPending: false,
+  };
+  const relationshipId = $(e.target).data('relationshipId');
+  firebaseFriends.deFriend(unFriendObject, relationshipId);
+  $(e.target).closest('.friendz').addClass('hide');
+};
+
 module.exports = {
   addRequestEvents,
   addFriendEvent,
+  addUnFriendEvent,
 };

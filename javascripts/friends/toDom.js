@@ -24,9 +24,9 @@ const printMyFriends = (friendsArray, myId) => {
   stringToPrint += `<div class="panel-heading">Friends List</div>`;
   friendsArray.forEach((friend) => {
     stringToPrint += `<div>`;
-    stringToPrint += `<div class="panel-body">`;
+    stringToPrint += `<div class="panel-body friendz">`;
     stringToPrint += `${friend.username}`;
-    stringToPrint += `<button data-relationship-Id="${friend.id}" data-friend-id="${friend.uid}" data-myId="${myId}"  type="button" class="btn btn-danger de-friend">Un-Friend</button>`;
+    stringToPrint += `<button data-relationship-Id="${friend.id}" data-friend-id="${friend.userUid}" data-myId="${myId}"  type="button" class="btn btn-danger de-friend">Un-Friend</button>`;
     stringToPrint += `</div>`;
     stringToPrint += `</div>`;
   });

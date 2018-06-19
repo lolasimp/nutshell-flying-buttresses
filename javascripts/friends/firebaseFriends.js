@@ -93,7 +93,7 @@ const friendsList = () => {
         });
       }
     });
-    toDom.printMyFriends(myFriends);
+    toDom.printMyFriends(myFriends, myId);
   }).catch((err) => {
     console.error('Friends list failed to load: ', err);
   });
@@ -156,10 +156,26 @@ const createNewRelationship = (newRelationship) => {
   });
 };
 
+const deFriend = (unFriendObject, relationshipID) => {
+  return new Promise ((resolve, reject) => {
+    const config = getFirebaseConfig();
+    $.ajax({
+      method: `PUT`,
+      url: `${config.databaseURL}/friends/${relationshipID}.json`,
+      data: JSON.stringify(unFriendObject),
+    }).done((data) => {
+      resolve(data);
+    }).fail((err) => {
+      reject(err);
+    });
+  });
+};
+
 module.exports = {
   updateFriendRequest,
   getFriendRequests,
   friendsList,
   suggestFriends,
   createNewRelationship,
+  deFriend,
 };
