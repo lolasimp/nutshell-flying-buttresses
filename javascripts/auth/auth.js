@@ -1,6 +1,7 @@
 const {setUID,} = require('./firebaseAPI');
 const {initMessageBoard,} = require('../messages/message_main');
 const firebaseFriends = require('../friends/firebaseFriends.js');
+const allArticles = require('../articles/javascripts/events');
 const {initialierEvents,} = require('../events/events_main');
 const {callAllEvents,} = require('../events/events_events');
 
@@ -24,6 +25,7 @@ const checkLoginStatus = () =>
       // GET DATA FROM FIREBASE AND SET MESSAGE BOARD LISTENERS
       initMessageBoard();
       firebaseFriends.getFriendRequests();
+      allArticles.getAllArticlesEvent();
       firebaseFriends.friendsList();
       firebaseFriends.suggestFriends();
       callAllEvents();
@@ -35,6 +37,7 @@ const checkLoginStatus = () =>
       $('#articles-main-container').addClass('hide');
       $('#friends-main-container').addClass('hide');
       $('#authScreen').removeClass('hide');
+      $('#login-form').removeClass('hide');
       $('#friend-requests').html('');
       $('#myFriends').html('');
       $('#suggestedFriends').html('');
@@ -45,6 +48,11 @@ const checkLoginStatus = () =>
 };
 
 module.exports =
-{
-  checkLoginStatus,
-};
+  {
+    checkLoginStatus,
+  };
+
+module.exports =
+  {
+    checkLoginStatus,
+  };
