@@ -231,13 +231,13 @@ const getFriendArticles = () => {
     allRelationshipsAndArticles[1].forEach((article) => {
       if (article.userUid !== myId) {
         myRelationships.forEach((relationshipz) => {
-          if ((article.userUid === relationshipz.userUid) || (article.userUid === relationshipz.friend)) {
+          if ((article.userUid === relationshipz.userUid) || (article.userUid === relationshipz.friendUid)) {
             friendsArticles.push(article);
           }
         });
       }
     });
-    toDom.printArticles(friendsArticles, myArticles);
+    toDom.domStringBuilder(friendsArticles, myArticles, myId);
   }).catch((err) => {
     console.error('Failed to get friends articles: ', err);
   });

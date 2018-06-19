@@ -14,6 +14,16 @@ const domStringBuilder = (articleArr, user) =>
     }
     domString += `</div>`;
   });
+
+  // friendsArticleArr.forEach(articles =>
+  // {
+  //   domString += `<div class='article' id='individualArticle' data-firebase-id="${articles.id}">`;
+  //   domString +=  `<h3 class='titleText'>${articles.title}</h3>`;
+  //   domString +=  `<p class='urlText'>${articles.synopsis}</p>`;
+  //   domString +=  `<p class='synopsisText'>${articles.url}</p>`;
+  //   domString += `</div>`;
+  // });
+
   printToDom(domString, 'articleHolder');
 };
 

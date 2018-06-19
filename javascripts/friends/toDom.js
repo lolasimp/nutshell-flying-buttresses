@@ -47,8 +47,38 @@ const suggestedFriends = (friendsArray) => {
   appendToDom('#suggestedFriends', stringToPrint);
 };
 
+const domStringBuilder = (friendsArticleArr, articleArr, user) =>
+{
+  let domString = '';
+  articleArr.forEach(article =>
+  {
+    domString += `<div class='article' id='individualArticle' data-firebase-id="${article.id}">`;
+    domString +=  `<h3 class='titleText'>${article.title}</h3>`;
+    domString +=  `<p class='urlText'>${article.synopsis}</p>`;
+    domString +=  `<p class='synopsisText'>${article.url}</p>`;
+    if (article.userUid === user)
+    {
+      domString +=  `<button class='editArticle' data-toggle="modal" data-target="#editModal">Edit</button>`;
+      domString +=  `<button class='deleteArticle'>Delete</button>`;
+    }
+    domString += `</div>`;
+  });
+
+  friendsArticleArr.forEach(articles =>
+  {
+    domString += `<div class='article' id='individualArticle' data-firebase-id="${articles.id}">`;
+    domString +=  `<h3 class='titleText'>${articles.title}</h3>`;
+    domString +=  `<p class='urlText'>${articles.synopsis}</p>`;
+    domString +=  `<p class='synopsisText'>${articles.url}</p>`;
+    domString += `</div>`;
+  });
+
+  printToDom('#articleHolder', domString);
+};
+
 module.exports = {
   friendRequestBuilder,
   printMyFriends,
   suggestedFriends,
+  domStringBuilder,
 };
