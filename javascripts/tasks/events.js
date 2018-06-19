@@ -11,23 +11,21 @@ const addTaskBtn = () => {
 };
 
 const saveTasktoFbEvent = () => {
-  $(document).on('click', '#add-task-btn', () => {
-    const newestTask = grabUserInput();
+  const newestTask = grabUserInput();
 
-    const taskToAdd = {
-      userUid: '5ykBb0xyadPZLgH4EPO4i88HIql2',
-      task: `${newestTask}`,
-      isCompleted: false,
-    };
+  const taskToAdd = {
+    userUid: '5ykBb0xyadPZLgH4EPO4i88HIql2',
+    task: `${newestTask}`,
+    isCompleted: false,
+  };
 
-    firebaseApi.saveNewTask(taskToAdd)
-      .then(() => {
-        getAllTasks();
-      })
-      .catch((error) => {
-        console.error(`I'm gonna give it to you straight, something went wrong when saving your task.`, error);
-      });
-  });
+  firebaseApi.saveNewTask(taskToAdd)
+    .then(() => {
+      getAllTasks();
+    })
+    .catch((error) => {
+      console.error(`I'm gonna give it to you straight, something went wrong when saving your task.`, error);
+    });
 };
 
 const grabUserInput = () => {
