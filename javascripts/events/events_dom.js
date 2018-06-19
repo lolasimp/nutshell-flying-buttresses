@@ -10,7 +10,7 @@ const eventsAdded = (ThingsToDoArray) => {
     strang += `<div class="item" data-firebase-id="${item.id}">`;
     // strang += `<div class="item">`;
     // strang += `<div class="item-date">`;
-    strang += `<h4 class="item=start">${item.startDate}</h4>`;
+    strang += `<h4 class="item-start">${item.startDate}</h4>`;
     // strang += `</div>`;
     // strang += `</div>`;
     // strang += `<div class="item-name">`;
