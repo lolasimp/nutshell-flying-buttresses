@@ -1,26 +1,19 @@
+/* MAIN BODY STYLING */
+
 body {
   background-color: brown;
 }
 
-#message-main-container {
-  border: 5px solid maroon;
+p {
+font-family: 'Poppins', sans-serif;
 }
 
-#tasks-main-container {
-  border: 5px solid maroon;
+h1 {
+  font-family: 'Krona One', sans-serif;
 }
 
-#events-main-container {
-  border: 5px solid maroon;
-}
+ /* END MAIN BODY STYLING */
 
-#articles-main-container {
-  border: 5px solid maroon;
-}
-
-#friends-main-container {
-  border: 5px solid maroon;
-}
 
 /* MESSAGE STYLING */
 #message-main-container {
@@ -90,3 +83,26 @@ body {
   padding: 20px 50px 20px 20px;
   overflow: auto;
 } */
+
+/* Tasks */
+
+.check-mark {
+  color: seagreen;
+}
+
+.check-mark:hover {
+  color: darkgreen;
+}
+
+.remove-mark {
+  color: tomato;
+}
+
+.remove-mark:hover {
+  color: red;
+}
+
+.margin {
+  margin-left: 5px;
+  margin-right: 5px;
+}

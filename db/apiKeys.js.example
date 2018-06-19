@@ -1,0 +1,10 @@
+{
+ "firebase": {
+   "apiKey": "#############",
+   "authDomain": "nutshell-flying-buttresses.firebaseapp.com",
+   "databaseURL": "https://nutshell-flying-buttresses.firebaseio.com",
+   "projectId": "nutshell-flying-buttresses",
+   "storageBucket": "nutshell-flying-buttresses.appspot.com",
+   "messagingSenderId": "#########"
+  }
+}

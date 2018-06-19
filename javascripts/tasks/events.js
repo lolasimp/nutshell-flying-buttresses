@@ -44,9 +44,32 @@ const getAllTasks = () => {
     });
 };
 
+// Update to Completed Tasks
+const updateTaskEvent = () => {
+  $(document).on('click', '.complete-task', (e) => {
+    const taskClickedId = $(e.target).closest('.task').data('firebaseId');
+    const clickedTask = $(e.target).closest('.task');
+
+    const updatedTask = {
+      isCompleted: true,
+      task: clickedTask.text(),
+      userUid: clickedTask.data('userUid'),
+    };
+
+    firebaseApi.updateTask(updatedTask, taskClickedId)
+      .then(() => {
+        getAllTasks();
+      })
+      .catch((errrorrr) => {
+        console.error('Something went wrong updating the task', errrorrr);
+      });
+  });
+};
+
 const initializer = () => {
   addTaskBtn();
   getAllTasks();
+  updateTaskEvent();
 };
 
 module.exports = {
