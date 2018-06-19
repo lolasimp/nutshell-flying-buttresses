@@ -21,12 +21,12 @@ const friendRequestBuilder = (requestArray) => {
 
 const printMyFriends = (friendsArray, myId) => {
   let stringToPrint = '';
-  stringToPrint += `<div class="panel-heading">Friends List</div>`;
+  stringToPrint += ``;
   friendsArray.forEach((friend) => {
     stringToPrint += `<div>`;
     stringToPrint += `<div class="panel-body friendz">`;
     stringToPrint += `${friend.username}`;
-    stringToPrint += `<button data-relationship-Id="${friend.id}" data-friend-id="${friend.userUid}" data-myId="${myId}"  type="button" class="btn btn-danger de-friend">Un-Friend</button>`;
+    stringToPrint += `<button data-relationship-Id="${friend.id}" data-friend-id="${friend.userUid}" data-myId="${myId}"  type="button" class="btn btn-inverse de-friend">Un-Friend</button>`;
     stringToPrint += `</div>`;
     stringToPrint += `</div>`;
   });
@@ -35,12 +35,12 @@ const printMyFriends = (friendsArray, myId) => {
 
 const suggestedFriends = (friendsArray) => {
   let stringToPrint = '';
-  stringToPrint += `<div class="panel-heading">Suggested Friends</div>`;
+  stringToPrint += ``;
   friendsArray.forEach((friend) => {
     stringToPrint += `<div>`;
     stringToPrint += `<div class="panel-body">`;
     stringToPrint += `${friend.username}`;
-    stringToPrint += `<button data-uid="${friend.uid}" type="button" class="btn btn-danger add-friend">Friend</button>`;
+    stringToPrint += `<button data-uid="${friend.uid}" type="button" class="btn btn-default add-friend">Friend</button>`;
     stringToPrint += `</div>`;
     stringToPrint += `</div>`;
   });
