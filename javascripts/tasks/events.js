@@ -66,10 +66,25 @@ const updateTaskEvent = () => {
   });
 };
 
+// delete task from fb
+const removeTaskEvent = () => {
+  $(document).on('click', '.delete-task', (e) => {
+    const selectedTaskId = $(e.target).closest('.task').data('firebaseId');
+    firebaseApi.deleteTask(selectedTaskId)
+      .then(() => {
+        getAllTasks();
+      })
+      .catch((problem) => {
+        console.error('Could not delete task', problem);
+      });
+  });
+};
+
 const initializer = () => {
   addTaskBtn();
   getAllTasks();
   updateTaskEvent();
+  removeTaskEvent();
 };
 
 module.exports = {
