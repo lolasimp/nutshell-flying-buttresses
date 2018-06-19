@@ -62,23 +62,16 @@ const editArticlesEvent = () =>
 {
   $(document).on('click','.editArticle', (e) =>
   {
+    const articleToEdit = $(e.target).closest('.article');
     const articleToUpdateId = $(e.target).closest('.article').data('firebaseId');
-    const articleToUpdateCard = $(e.target).closest('.article');
-    const editEvent =
-    {
-      synopsis: articleToUpdateCard.find('.synopsisInput').text(),
-      title: articleToUpdateCard.find('.titleInput').text(),
-      url: articleToUpdateCard.find('.urlInput').text(),
-    };
-    firebaseAPI.editArticles(editEvent, articleToUpdateId)
-      .then(() =>
-      {
-        getAllArticlesEvent();
-      })
-      .catch((error) =>
-      {
-        console.error('error in update event:', error);
-      });
+    const title = articleToEdit.find('.titleText').text();
+    console.log(title);
+    const url = articleToEdit.find('.urlText').text();
+    const synopsis = articleToEdit.find('.synopsisText').text();
+    $('#editModal').data(articleToUpdateId);
+    $('.titleInput2').val(title);
+    $('.urlInput2').val(url);
+    $('.synopsisInput2').val(synopsis);
   });
 };
 
