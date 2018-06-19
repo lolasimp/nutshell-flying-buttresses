@@ -1,11 +1,11 @@
+const articleInit = require('./articles/javascripts/main');
 const init = require('./auth/events');
 const api = require('./auth/apiKeys');
 const ajwFriends = require('./friends/main.js');
-// const test = require('./friends/events.js');
-// const lastEvents = require('./events/events_main');
+const taskEvents = require('./tasks/events');
 
+taskEvents.initializer();
 api.retrieveKeys();
 init.initializer();
 ajwFriends.initializer();
-// test.addRequestEvents();
-// lastEvents.initialierEvents();
+articleInit;

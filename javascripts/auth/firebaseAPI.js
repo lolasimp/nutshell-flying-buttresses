@@ -18,10 +18,15 @@ const getUID = () => {
   return uid;
 };
 
+const getConfig = () => {
+  return fireBaseConfig;
+};
+
 module.exports =
 {
   setConfig,
   setUID,
   getFirebaseConfig,
   getUID,
+  getConfig,
 };

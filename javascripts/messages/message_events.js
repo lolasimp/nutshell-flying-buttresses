@@ -41,7 +41,6 @@ const getAllMessagesEvent = () => {
 const deleteMessageEvent = () => {
   $(document).on('click', '.btn-message-delete', (e) => {
     const messageId = $(e.target).closest('.message').data('firebaseId');
-
     mDelete.deleteMessage(messageId)
       .then(() => {
         getAllMessagesEvent();
