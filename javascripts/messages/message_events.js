@@ -97,11 +97,11 @@ const getUsers = (messagesArray, user) => {
 };
 
 const buttonBehavior = () => {
-  $(document).on('mouseenter', '.message', (e) => {
+  $(document).on('mouseenter', '.message, .article, .item', (e) => {
     $(e.target).find('.btn-message-edit').removeClass('hide');
     $(e.target).find('.btn-message-delete').removeClass('hide');
   });
-  $(document).on('mouseleave', '.message', (e) => {
+  $(document).on('mouseleave', '.message, .article, .item', (e) => {
     $(e.target).find('.btn-message-edit').addClass('hide');
     $(e.target).find('.btn-message-delete').addClass('hide');
   });
