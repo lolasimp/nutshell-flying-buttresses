@@ -10,20 +10,22 @@ const eventsAdded = (ThingsToDoArray) => {
     strang += `<div class="item" data-firebase-id="${item.id}">`;
     // strang += `<div class="item">`;
     // strang += `<div class="item-date">`;
-    strang += `<h4 class="item=start">${item.startDate}</h4>`;
     // strang += `</div>`;
     // strang += `</div>`;
     // strang += `<div class="item-name">`;
     strang += `<h3 class="item-event">${item.event}</h3>`;
     // strang += `<div>`;
     strang += `<h5 class="item-location">${item.location}</h5>`;
+    strang += `<h5 class="item=start">${item.startDate}</h5>`;
     // strang += `</div>`;
     // strang += `</div>`;
     strang += `<div class="item-user"> `;
     // strang += `</div>`;
     // strang += `</div>`;
-    strang += `<button type="button" class="btn btn-danger editBtn"><span>Edit</span></button>`;
-    strang += `<button type="button" class="btn btn-danger deleteBtn"><span>Delete</span></button>`;
+    strang += `<button class='btn btn-default btn-message-edit editBtn hide' data-toggle="modal" data-target=""><span class='glyphicon glyphicon-pencil ignore-click'></span></button>`;
+    // strang += `<button type="button" class="btn btn-danger editBtn"><span>Edit</span></button>`;
+    strang += `<button type="button" class='btn btn-default btn-message-delete deleteBtn hide'><span class='glyphicon glyphicon-trash ignore-click'></span></button>`;
+    // strang += `<button type="button" class="btn btn-danger deleteBtn"><span>Delete</span></button>`;
     strang += `</div>`;
     // }
   });
